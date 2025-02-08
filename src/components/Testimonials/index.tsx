@@ -5,28 +5,28 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Jordi Torres",
+    designation: "Miembro - Club Ciclista Ontinyent",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Gracias a ALCARIA, nuestro club ha optimizado la organización de rutas y eventos, permitiéndonos centrarnos en la pasión por el ciclismo. La tecnología implementada ha mejorado la experiencia de nuestros socios.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "Miguel Sánchez",
+    designation: "Fundador - Origen Padel",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Las soluciones de ALCARIA han transformado la operativa de Origen Padel. Hemos logrado optimizar procesos y ofrecer a nuestros clientes una experiencia deportiva innovadora y de alta calidad.",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
   {
     id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
+    name: "Carlos Martínez",
+    designation: "Director General - CBB, Olleria",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "En CBB confiamos en ALCARIA para transformar nuestros procesos internos. Su enfoque tecnológico y personalizado nos ha permitido alcanzar nuevos niveles de eficiencia y posicionarnos como referentes en el sector.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
@@ -34,11 +34,11 @@ const testimonialData: Testimonial[] = [
 
 const Testimonials = () => {
   return (
-    <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
+    <section className="relative z-10 bg-gray-light py-16 dark:bg-bg-color-dark md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Testimonios de Clientes"
+          paragraph="Descubre cómo las soluciones de ALCARIA han impulsado la eficiencia y productividad de nuestros clientes."
           center
         />
 
@@ -48,6 +48,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+      {/* SVG decorativo superior derecho */}
       <div className="absolute right-0 top-5 z-[-1]">
         <svg
           width="238"
@@ -102,6 +103,7 @@ const Testimonials = () => {
           </defs>
         </svg>
       </div>
+      {/* SVG decorativo inferior izquierdo */}
       <div className="absolute bottom-5 left-0 z-[-1]">
         <svg
           width="279"

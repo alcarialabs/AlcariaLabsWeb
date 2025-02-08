@@ -26,7 +26,7 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyNavbar);
   });
 
-  // submenu handler
+  // Submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
   const handleSubmenu = (index) => {
     if (openIndex === index) {
@@ -57,15 +57,15 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
+                  src="/images/logo/LOGO_ALCARIA_AZUL.png"
+                  alt="ALCARIA logo"
                   width={140}
                   height={30}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.svg"
-                  alt="logo"
+                  src="/images/logo/LOGO_ALCARIA_BLANCO.png"
+                  alt="ALCARIA logo"
                   width={140}
                   height={30}
                   className="hidden w-full dark:block"
@@ -82,17 +82,17 @@ const Header = () => {
                 >
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[7px] rotate-45" : " "
+                      navbarOpen ? "top-[7px] rotate-45" : ""
                     }`}
                   />
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? "opacity-0 " : " "
+                      navbarOpen ? "opacity-0" : ""
                     }`}
                   />
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[-8px] -rotate-45" : " "
+                      navbarOpen ? "top-[-8px] -rotate-45" : ""
                     }`}
                   />
                 </button>
@@ -159,6 +159,7 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
+                {/*
                 <Link
                   href="/signin"
                   className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
@@ -171,6 +172,7 @@ const Header = () => {
                 >
                   Sign Up
                 </Link>
+                */}
                 <div>
                   <ThemeToggler />
                 </div>

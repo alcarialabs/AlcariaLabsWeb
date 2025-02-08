@@ -3,45 +3,46 @@ import { Blog } from "@/types/blog";
 const blogData: Blog[] = [
   {
     id: 1,
-    title: "Best UI components for modern websites",
+    title: "Automatización: El camino hacia la eficiencia empresarial",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Descubre cómo la automatización de procesos puede transformar la operativa de tu empresa, reduciendo costos y mejorando la productividad.",
     image: "/images/blog/blog-01.jpg",
     author: {
-      name: "Samuyl Joshi",
+      name: "Ana García",
       image: "/images/blog/author-01.png",
-      designation: "Graphic Designer",
+      designation: "Experta en Transformación Digital",
     },
-    tags: ["creative"],
+    tags: ["automatización", "eficiencia"],
     publishDate: "2025",
   },
   {
     id: 2,
-    title: "9 simple ways to improve your design skills",
+    title: "Integración de Inteligencia Artificial en PYMEs",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "La inteligencia artificial se ha convertido en un aliado clave para las pequeñas y medianas empresas. Conoce cómo implementarla de forma sencilla.",
     image: "/images/blog/blog-02.jpg",
     author: {
-      name: "Musharof Chy",
+      name: "Luis Fernández",
       image: "/images/blog/author-02.png",
-      designation: "Content Writer",
+      designation: "Consultor de IA",
     },
-    tags: ["computer"],
+    tags: ["IA", "transformación"],
     publishDate: "2025",
   },
   {
     id: 3,
-    title: "Tips to quickly improve your coding speed.",
+    title: "Casos de Éxito: Empresas que Transformaron su Operativa",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Lee los casos de éxito de empresas que, gracias a ALCARIA, han optimizado sus procesos y alcanzado nuevos niveles de productividad.",
     image: "/images/blog/blog-03.jpg",
     author: {
-      name: "Lethium Deo",
+      name: "María Rodríguez",
       image: "/images/blog/author-03.png",
-      designation: "Graphic Designer",
+      designation: "Analista de Negocios",
     },
-    tags: ["design"],
+    tags: ["casos de éxito", "innovación"],
     publishDate: "2025",
   },
 ];
+
 export default blogData;

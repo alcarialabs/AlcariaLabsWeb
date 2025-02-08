@@ -11,8 +11,8 @@ const Pricing = () => {
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Simple and Affordable Pricing"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Planes de Servicio ALCARIA"
+          paragraph="Elige el plan que mejor se adapte a las necesidades de tu empresa. Nuestros planes flexibles están diseñados para transformar y automatizar tus procesos operativos de forma sencilla y eficiente."
           center
           width="665px"
         />
@@ -27,7 +27,7 @@ const Pricing = () => {
                   : "text-dark dark:text-white"
               } mr-4 cursor-pointer text-base font-semibold`}
             >
-              Monthly
+              Mensual
             </span>
             <div
               onClick={() => setIsMonthly(!isMonthly)}
@@ -52,50 +52,50 @@ const Pricing = () => {
                   : "pointer-events-none text-primary"
               } ml-4 cursor-pointer text-base font-semibold`}
             >
-              Yearly
+              Anual
             </span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
+            packageName="Básico"
+            price={isMonthly ? "99" : "999"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle="Ideal para pequeñas empresas que inician su transformación digital."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Diagnóstico inicial de procesos" status="active" />
+            <OfferList text="Chatbot básico de atención" status="active" />
+            <OfferList text="Acceso a plataforma de automatización" status="active" />
+            <OfferList text="Soporte por email" status="active" />
+            <OfferList text="Actualizaciones periódicas" status="inactive" />
+            <OfferList text="Capacitación personalizada" status="inactive" />
           </PricingBox>
           <PricingBox
-            packageName="Basic"
-            price={isMonthly ? "399" : "789"}
+            packageName="Profesional"
+            price={isMonthly ? "199" : "1999"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle="Para empresas en crecimiento que requieren soluciones avanzadas."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Todo en el plan Básico" status="active" />
+            <OfferList text="Integración de IA avanzada" status="active" />
+            <OfferList text="Optimización de procesos operativos" status="active" />
+            <OfferList text="Soporte telefónico" status="active" />
+            <OfferList text="Actualizaciones y mejoras continuas" status="active" />
+            <OfferList text="Capacitación especializada" status="inactive" />
           </PricingBox>
           <PricingBox
-            packageName="Plus"
-            price={isMonthly ? "589" : "999"}
+            packageName="Empresarial"
+            price={isMonthly ? "299" : "2999"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle="La solución integral para grandes empresas con necesidades complejas."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
+            <OfferList text="Todo en el plan Profesional" status="active" />
+            <OfferList text="Consultoría estratégica personalizada" status="active" />
+            <OfferList text="Soporte 24/7" status="active" />
+            <OfferList text="Implementación integral de automatización" status="active" />
+            <OfferList text="Actualizaciones premium" status="active" />
+            <OfferList text="Capacitación y formación continua" status="active" />
           </PricingBox>
         </div>
       </div>

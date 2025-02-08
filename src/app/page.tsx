@@ -12,9 +12,10 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
-  // other metadata
+  title: "ALCARIA - Automatización e IA para Empresas",
+  description:
+    "Descubre cómo ALCARIA transforma procesos operativos con soluciones personalizadas de automatización y chatbots inteligentes, ayudando a empresas y PYMEs en su transformación digital.",
+  // Puedes agregar más metadata según lo necesites.
 };
 
 export default function Home() {

@@ -1,21 +1,21 @@
 import SingleBlog from "@/components/Blog/SingleBlog";
 import blogData from "@/components/Blog/blogData";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Blog Page for Startup Nextjs Template",
-  // other metadata
+  title: "Blog | ALCARIA - Automatización y Chatbots",
+  description:
+    "Descubre artículos y noticias sobre transformación digital, automatización y chatbots personalizados para impulsar la eficiencia operativa de tu empresa.",
+  // otros metadata que necesites agregar
 };
 
 const Blog = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="Blog"
+        description="Explora nuestros artículos y descubre cómo la automatización y los chatbots personalizados están transformando la forma en que las empresas operan y se comunican."
       />
 
       <section className="pb-[120px] pt-[120px]">
@@ -31,6 +31,7 @@ const Blog = () => {
             ))}
           </div>
 
+          {/* Paginación */}
           <div className="-mx-4 flex flex-wrap" data-wow-delay=".15s">
             <div className="w-full px-4">
               <ul className="flex items-center justify-center pt-8">
