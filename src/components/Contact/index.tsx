@@ -14,20 +14,18 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  // 🔹 Manejar cambios en los inputs
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 🔹 Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await addDoc(collection(db, "tickets"), formData);
       setSuccess(true);
-      setFormData({ name: "", email: "", message: "" }); // Resetea el formulario
+      setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      setError("❌ Error al enviar el ticket. Inténtalo de nuevo.");
+      setError("Error al enviar el ticket. Inténtalo de nuevo.");
     }
   };
 
@@ -43,7 +41,7 @@ const Contact = () => {
               <p className="mb-12 text-base font-medium text-body-color">
                 Nuestro equipo de soporte te responderá lo antes posible vía email.
               </p>
-              {success && <p className="text-green-500">✅ Ticket enviado correctamente.</p>}
+              {success && <p className="text-green-500">Ticket enviado correctamente.</p>}
               {error && <p className="text-red-500">{error}</p>}
               <form onSubmit={handleSubmit}>
                 <div className="-mx-4 flex flex-wrap">
