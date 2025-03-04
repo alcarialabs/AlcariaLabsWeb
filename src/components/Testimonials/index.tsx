@@ -5,28 +5,28 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Jordi Torres",
+    name: "Juanvi Aparici",
     designation: "Miembro - Club Ciclista Ontinyent",
     content:
-      "Gracias a ALCARIA, nuestro club ha optimizado la organización de rutas y eventos, permitiéndonos centrarnos en la pasión por el ciclismo. La tecnología implementada ha mejorado la experiencia de nuestros socios.",
+      "Gracias a ALCARIA, nuestro club ha optimizado la gestión de nuestras tarjetas para Wallet y el sistema de cupones automatizados. Ahora, nuestros socios disfrutan de una experiencia más fluida y eficiente. Sin duda un acierto confiar en ellos.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "Miguel Sánchez",
-    designation: "Fundador - Origen Padel",
+    name: "Jorge Guillem",
+    designation: "Propietario - Origen Padel",
     content:
-      "Las soluciones de ALCARIA han transformado la operativa de Origen Padel. Hemos logrado optimizar procesos y ofrecer a nuestros clientes una experiencia deportiva innovadora y de alta calidad.",
+      "Con la implementación de tarjetas dinámicas para Wallet, ALCARIA nos ha permitido ofrecer a nuestros clientes una experiencia digital moderna y personalizada. La fidelización y la interacción con nuestros jugadores han mejorado notablemente.",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
   {
     id: 3,
-    name: "Carlos Martínez",
-    designation: "Director General - CBB, Olleria",
+    name: "Jose Vicent",
+    designation: "Propietario - Cestería Vicent",
     content:
-      "En CBB confiamos en ALCARIA para transformar nuestros procesos internos. Su enfoque tecnológico y personalizado nos ha permitido alcanzar nuevos niveles de eficiencia y posicionarnos como referentes en el sector.",
+      "ALCARIA ha revolucionado nuestra gestión interna con una automatización eficiente de facturas y pedidos. Hemos reducido tiempos administrativos y ahora podemos centrarnos en lo que realmente importa: ofrecer el mejor servicio a nuestros clientes.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },

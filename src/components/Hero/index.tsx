@@ -54,12 +54,12 @@ const Hero = () => {
                 >
                   Solicita Consultoría
                 </Link>
-                <Link
+                {/* <Link
                   href="#video"
                   className="inline-block rounded-sm bg-[#FF4F00] px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-[#FF4F00]/90"
                 >
                   Ver Demo
-                </Link>
+                </Link> */}
               </MotionDiv>
             </MotionDiv>
           </div>
