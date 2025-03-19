@@ -3,11 +3,9 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Inter } from "next/font/google";
-import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "node_modules/react-modal-video/css/modal-video.css";
+import { Providers } from "./providers";
 
 export default function RootLayout({
   children,
@@ -16,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
+      <body className="font-poppins bg-[#FCFCFC] dark:bg-black">
         <Providers>
           <Header />
           {children}
@@ -27,5 +25,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import { Providers } from "./providers";

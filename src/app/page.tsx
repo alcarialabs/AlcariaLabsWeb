@@ -1,4 +1,5 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
+import AboutSectionThree from "@/components/About/AboutSectionThree";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
@@ -28,6 +29,7 @@ export default function Home() {
       {/* <Brands /> */}
       <AboutSectionOne />
       <AboutSectionTwo />
+      <AboutSectionThree />
       <Testimonials />
       {/* <Pricing /> */}
       {/* <Blog /> */}
