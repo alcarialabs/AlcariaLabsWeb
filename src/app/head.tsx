@@ -27,7 +27,7 @@ export default function Head() {
       />
       <meta name="twitter:image" content="/images/og-image.jpg" />
 
-      <link rel="icon" href="/favicon.png" />
+      <link rel="icon" href="/favicon.ico" />
     </>
   );
 }
