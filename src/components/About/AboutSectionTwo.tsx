@@ -13,13 +13,13 @@ const AboutSectionTwo = () => {
                 data-wow-delay=".15s"
               >
                 <Image
-                  src="/images/about/ia2.jpg"
+                  src="/images/about/ia23.jpg"
                   alt="Acerca de ALCARIA"
                   fill
                   className="drop-shadow-three dark:hidden dark:drop-shadow-none"
                 />
                 <Image
-                  src="/images/about/ia2.jpg"
+                  src="/images/about/ia23.jpg"
                   alt="Acerca de ALCARIA"
                   fill
                   className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
