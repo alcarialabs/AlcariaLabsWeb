@@ -17,14 +17,15 @@ const Hero = () => {
     >
       <div className="container">
         <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="w-full max-w-[850px] px-4 text-center">
+          <div className="w-full max-w-[1100px] px-4 text-center">
             <MotionDiv
+              className="flex flex-col items-center justify-center space-y-10 px-4 text-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <MotionH1
-                className="mb-6 text-4xl font-extrabold leading-tight text-[#01203F] dark:text-white sm:text-5xl md:text-6xl"
+                className="font-syne text-5xl font-semibold leading-[1.1] text-white sm:text-6xl md:text-7xl"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
@@ -33,18 +34,18 @@ const Hero = () => {
               </MotionH1>
 
               <MotionP
-                className="mb-10 text-lg leading-relaxed text-white/80 sm:text-xl md:text-2xl"
+                className="max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl md:text-2xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                Soluciones inteligentes de automatización, chatbots y tarjetas
-                Wallet que te permiten digitalizar procesos y ofrecer una
-                experiencia moderna y eficiente a tus clientes.
+                Soluciones inteligentes con agentes de IA, automatizaciones
+                personalizadas y tarjetas Wallet que digitalizan tus procesos y
+                elevan la experiencia de tus clientes a otro nivel. Convierte lo
+                manual en automático.
               </MotionP>
 
               <MotionDiv
-                className="flex justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
