@@ -11,11 +11,12 @@ import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
 import { Metadata } from "next";
+import AnimatedSection from "@/components/Common/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "ALCARIA - Automatización e IA para Empresas",
   description:
-    "Descubre cómo ALCARIA transforma procesos operativos con soluciones personalizadas de automatización y chatbots inteligentes, ayudando a empresas y PYMEs en su transformación digital.",
+    "Descubre cómo ALCARIA transforma procesos operativos con soluciones personalizadas de automatización y agentes inteligentes, ayudando a empresas y PYMEs en su transformación digital.",
   // Puedes agregar más metadata según lo necesites.
 };
 
@@ -24,16 +25,26 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
-      <Features />
-      {/* <Video /> */}
-      {/* <Brands /> */}
-      <AboutSectionOne />
-      <AboutSectionTwo />
-      <AboutSectionThree />
-      <Testimonials />
+      <AnimatedSection>
+        <Features />
+      </AnimatedSection>
+      <AnimatedSection>
+        <AboutSectionThree />
+      </AnimatedSection>
+      <AnimatedSection>
+        <AboutSectionOne />
+      </AnimatedSection>
+      <AnimatedSection>
+        <AboutSectionTwo />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Testimonials />
+      </AnimatedSection>
       {/* <Pricing /> */}
       {/* <Blog /> */}
-      <Contact />
+      <AnimatedSection>
+        <Contact />
+      </AnimatedSection>
     </>
   );
 }

@@ -19,30 +19,29 @@ const Hero = () => {
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full max-w-[1100px] px-4 text-center">
             <MotionDiv
-              className="flex flex-col items-center justify-center space-y-10 px-4 text-center"
+              className="flex flex-col items-center justify-center space-y-8 px-4 text-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <MotionH1
-                className="font-syne text-5xl font-semibold leading-[1.1] text-white sm:text-6xl md:text-7xl"
+                className="font-syne text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
               >
-                Automatiza. Optimiza. Escala.
+                {/* H1 Enfocado en Intriga y Transformación */}
+                El Impulso Inteligente que tu Empresa Merece.
               </MotionH1>
 
               <MotionP
-                className="max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl md:text-2xl"
+                className="max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                Soluciones inteligentes con agentes de IA, automatizaciones
-                personalizadas y tarjetas Wallet que digitalizan tus procesos y
-                elevan la experiencia de tus clientes a otro nivel. Convierte lo
-                manual en automático.
+                {/* Subtítulo que insinúa beneficios y crea curiosidad */}
+                Simplifica cómo conectas con tus clientes. Potencia radicalmente tu eficiencia operativa. Descubre la solución a medida.
               </MotionP>
 
               <MotionDiv
@@ -54,7 +53,7 @@ const Hero = () => {
                   href="#contact"
                   className="rounded-full bg-white px-8 py-4 text-base font-semibold text-[#0344DC] shadow-md duration-300 hover:bg-gray-100"
                 >
-                  Solicita Consultoría
+                  Descubre Cómo
                 </Link>
               </MotionDiv>
             </MotionDiv>

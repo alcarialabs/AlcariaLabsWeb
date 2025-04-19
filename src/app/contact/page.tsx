@@ -1,21 +1,21 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
+// import Breadcrumb from "@/components/Common/Breadcrumb"; // Comentado o eliminado previamente
 import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contacto | ALCARIA",
   description:
-    "Ponte en contacto con ALCARIA para descubrir soluciones de automatización y chatbots que transforman la gestión operativa de tu empresa.",
+    "Ponte en contacto con ALCARIA para descubrir soluciones de automatización y agentes inteligentes que transforman la gestión operativa de tu empresa.",
 };
 
 const ContactPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="Contacto"
-        description="Si buscas transformar digitalmente tu empresa, contáctanos. En ALCARIA ofrecemos soluciones personalizadas para optimizar procesos y mejorar la eficiencia operativa."
-      />
-      <Contact />
+      {/* Añadir padding superior al contenido principal */}
+      <main className="pt-32"> {/* Añadir padding top aquí */}
+        {/* <Breadcrumb pageName="Contacto" description="..." /> */}
+        <Contact />
+      </main>
     </>
   );
 };

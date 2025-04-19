@@ -1,11 +1,9 @@
 "use client";
 
-import { ThemeProvider } from "next-themes";
+// Ya no se necesita ThemeProvider
+// import { ThemeProvider } from "next-themes"; 
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
-      {children}
-    </ThemeProvider>
-  );
+  // Simplemente devolvemos los hijos sin el ThemeProvider
+  return <>{children}</>; 
 }

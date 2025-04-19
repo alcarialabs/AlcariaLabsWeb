@@ -34,23 +34,22 @@ const Contact = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
-            <div className="mb-12 bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-              <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Asistencia personalizada cuando la necesites
+            <div className="mb-12 rounded-xl border border-gray-200 bg-white p-8 shadow-lg dark:border-gray-700 dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
+              <h2 className="mb-3 text-2xl font-bold text-space-blue dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+                ¿Listo para Transformar tu Negocio con Wallet e IA?
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
-                Contacta con nuestro equipo y recibe una respuesta rápida y
-                eficiente para resolver tus dudas.
+                Contáctanos para una consulta gratuita y descubre cómo nuestras soluciones personalizadas pueden impulsar tu crecimiento.
               </p>
               {success && (
-                <p className="text-green-500">Ticket enviado correctamente.</p>
+                <p className="text-green-500">Mensaje enviado correctamente. ¡Gracias!</p>
               )}
               {error && <p className="text-red-500">{error}</p>}
               <form onSubmit={handleSubmit}>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
-                      <label className="mb-3 block text-sm font-medium text-dark dark:text-white">
+                      <label className="mb-3 block text-sm font-medium text-space-blue dark:text-white">
                         Tu Nombre
                       </label>
                       <input
@@ -59,14 +58,14 @@ const Contact = () => {
                         placeholder="Ingresa tu nombre"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none dark:bg-[#2C303B] dark:text-body-color-dark"
+                        className="w-full rounded-xl border border-gray-300 bg-white px-6 py-3 text-base text-body-color outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary"
                         required
                       />
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
-                      <label className="mb-3 block text-sm font-medium text-dark dark:text-white">
+                      <label className="mb-3 block text-sm font-medium text-space-blue dark:text-white">
                         Tu Email
                       </label>
                       <input
@@ -75,14 +74,14 @@ const Contact = () => {
                         placeholder="Ingresa tu correo"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none dark:bg-[#2C303B] dark:text-body-color-dark"
+                        className="w-full rounded-xl border border-gray-300 bg-white px-6 py-3 text-base text-body-color outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary"
                         required
                       />
                     </div>
                   </div>
                   <div className="w-full px-4">
                     <div className="mb-8">
-                      <label className="mb-3 block text-sm font-medium text-dark dark:text-white">
+                      <label className="mb-3 block text-sm font-medium text-space-blue dark:text-white">
                         Tu Mensaje
                       </label>
                       <textarea
@@ -91,7 +90,7 @@ const Contact = () => {
                         placeholder="Escribe tu mensaje"
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full resize-none rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none dark:bg-[#2C303B] dark:text-body-color-dark"
+                        className="w-full resize-none rounded-xl border border-gray-300 bg-white px-6 py-3 text-base text-body-color outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary"
                         required
                       ></textarea>
                     </div>
@@ -99,9 +98,9 @@ const Contact = () => {
                   <div className="w-full px-4">
                     <button
                       type="submit"
-                      className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
+                      className="rounded-xl bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
                     >
-                      Enviar Ticket
+                      Solicitar Consulta Gratuita
                     </button>
                   </div>
                 </div>
@@ -109,7 +108,9 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <NewsLatterBox />
+            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-lg dark:border-gray-700 dark:bg-gray-dark">
+              <NewsLatterBox />
+            </div>
           </div>
         </div>
       </div>

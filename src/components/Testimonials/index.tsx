@@ -9,7 +9,7 @@ const testimonialData: Testimonial[] = [
     designation: "Miembro - Club Ciclista Ontinyent",
     content:
       "Gracias a ALCARIA, nuestro club ha optimizado la gestión de nuestras tarjetas para Wallet y el sistema de cupones automatizados. Ahora, nuestros socios disfrutan de una experiencia más fluida y eficiente. Sin duda un acierto confiar en ellos.",
-    image: "/images/testimonials/auth-01.png",
+    image: "/images/testimonials/juanvi.jpeg",
     star: 5,
   },
   {
@@ -34,7 +34,7 @@ const testimonialData: Testimonial[] = [
 
 const Testimonials = () => {
   return (
-    <section className="relative z-10 bg-gray-light py-16 dark:bg-bg-color-dark md:py-20 lg:py-28">
+    <section className="relative z-10 bg-alc-beige py-16 dark:bg-bg-color-dark md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
           title="Testimonios de Clientes"

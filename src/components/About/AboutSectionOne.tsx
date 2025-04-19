@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
+import Link from "next/link";
 
 const checkIcon = (
   <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
@@ -21,13 +22,13 @@ const AboutSectionOne = () => {
   return (
     <section id="about" className="pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
+        <div className="border-b border-frontier-gray pb-16 md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             {/* Sección de texto y listado */}
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Innovación y Automatización para tu Empresa"
-                paragraph="En ALCARIA combinamos experiencia técnica y soluciones a medida para transformar y optimizar los procesos operativos de empresas y PYMEs."
+                title="Tu Socio en Transformación Digital Inteligente"
+                paragraph="Combinamos la innovación de las Tarjetas Wallet con el poder de la IA para ofrecerte soluciones integradas que generan resultados reales."
                 mb="44px"
               />
 
@@ -37,14 +38,12 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Diagnóstico Personalizado" />
-                    <List text="Soluciones a Medida" />
-                    <List text="Resultados Comprobados" />
+                    <List text="Soluciones Integradas (Wallet + IA)" />
+                    <List text="Experiencia Dual (Cliente y Operaciones)" />
                   </div>
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Automatización Inteligente" />
-                    <List text="Integración con IA" />
-                    <List text="Soporte Continuo" />
+                    <List text="Enfoque Práctico y Personalizado (PYMEs)" />
+                    <List text="Innovación Accesible con Soporte Experto" />
                   </div>
                 </div>
               </div>
@@ -52,7 +51,7 @@ const AboutSectionOne = () => {
 
             {/* Sección de imagen */}
             <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
+              <div className="relative mx-auto aspect-[25/24] max-w-[500px] overflow-hidden rounded-3xl lg:mr-0">
                 <Image
                   src="/images/about/ai_chip.jpg"
                   alt="Acerca de ALCARIA"

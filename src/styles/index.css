@@ -5,27 +5,11 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Syne", sans-serif;
-    font-weight: 600;
-  }
-
-  em,
-  .resaltado {
-    font-family: "Playfair Display", cursive;
-    font-weight: 400;
-    font-style: italic;
-  }
+  /* Eliminar las reglas de font-family y font-weight para body */
+  /* ... existing code ... */
+  /* Eliminar las reglas de font-family y font-weight para h1-h6 */
+  /* ... existing code ... */
+  /* Eliminar las reglas de font-family, font-weight y font-style para em, .resaltado */
 }
 
 @layer components {
