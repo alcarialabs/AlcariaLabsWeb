@@ -2,22 +2,22 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Error | ALCARIA",
+  title: "Página No Encontrada | ALCARIA",
   description:
-    "Lo sentimos, la página que buscas no existe o ha sido eliminada. Descubre cómo ALCARIA impulsa la transformación digital.",
+    "¡Ups! Parece que esta página se perdió. Vuelve al inicio para descubrir cómo ALCARIA impulsa la transformación digital.",
 };
 
 const ErrorPage = () => {
   return (
     <>
-      <section className="relative z-10 pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
+      <section className="relative z-10 flex min-h-[calc(100vh-theme(spacing.32))] items-center justify-center py-20 dark:bg-gray-dark">
         <div className="container">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[530px] text-center">
-                <div className="mx-auto text-center mb-9">
+                <div className="mx-auto text-center mb-8">
                   <svg
-                    className="w-full mx-auto text-center"
+                    className="w-full mx-auto text-center max-h-[180px] md:max-h-[210px]"
                     height="210"
                     viewBox="0 0 474 210"
                     fill="none"
@@ -140,207 +140,21 @@ const ErrorPage = () => {
                     </defs>
                   </svg>
                 </div>
-                <h3 className="mb-4 text-3xl font-bold text-black dark:text-white sm:text-4xl">
-                  Lo sentimos, la página no se pudo encontrar
+                <h3 className="mb-6 text-3xl font-bold text-space-blue dark:text-white sm:text-4xl">
+                  ¡Houston, tenemos un 404!
                 </h3>
-                <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  La página que buscas ha sido movida, eliminada o nunca existió.
+                <p className="mb-10 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg sm:leading-relaxed">
+                  Parece que el enlace se perdió en el ciberespacio o nuestros algoritmos necesitan café. ¡No te preocupes, podemos volver a la órbita!
                 </p>
                 <Link
                   href="/"
-                  className="px-8 py-3 text-base font-bold text-white duration-300 rounded-md bg-primary shadow-signUp hover:bg-white hover:text-primary md:px-9 lg:px-8 xl:px-9"
+                  className="inline-block rounded-md bg-primary px-8 py-3 text-base font-bold text-white shadow-md duration-300 hover:bg-primary/90 dark:bg-primary dark:text-white dark:hover:bg-primary/90"
                 >
-                  Volver a Inicio
+                  Volver a la Plataforma Base
                 </Link>
               </div>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-0 left-0 z-[-1] hidden sm:block">
-          <svg
-            width="406"
-            height="286"
-            viewBox="0 0 406 286"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g opacity="0.5">
-              <rect
-                opacity="0.5"
-                x="57.25"
-                y="108.344"
-                width="116.719"
-                height="116.438"
-                stroke="url(#paint0_linear_116:1151)"
-              />
-              <rect
-                opacity="0.1"
-                x="57.25"
-                y="108.344"
-                width="116.719"
-                height="116.438"
-                fill="url(#paint1_linear_116:1151)"
-              />
-              <path
-                opacity="0.5"
-                d="M173.688 108.344L230.219 49V165.601L173.688 224.781V108.344Z"
-                stroke="url(#paint2_linear_116:1151)"
-              />
-              <path
-                opacity="0.1"
-                d="M173.688 108.344L230.219 49V165.601L173.688 224.781V108.344Z"
-                fill="url(#paint3_linear_116:1151)"
-              />
-              <path
-                opacity="0.5"
-                d="M1 167.619L57.25 108.344V224.85L1 284.125V167.619Z"
-                stroke="url(#paint4_linear_116:1151)"
-              />
-              <path
-                opacity="0.1"
-                d="M1 167.619L57.25 108.344V224.85L1 284.125V167.619Z"
-                fill="url(#paint5_linear_116:1151)"
-              />
-              <rect
-                opacity="0.5"
-                x="229.938"
-                y="49.2812"
-                width="119.25"
-                height="116.438"
-                stroke="url(#paint6_linear_116:1151)"
-              />
-              <rect
-                opacity="0.1"
-                x="229.938"
-                y="49.2812"
-                width="119.25"
-                height="116.438"
-                fill="url(#paint7_linear_116:1151)"
-              />
-              <path
-                opacity="0.5"
-                d="M348.906 49.2812L406 0V108.113L348.906 165.719V49.2812Z"
-                stroke="url(#paint8_linear_116:1151)"
-              />
-              <path
-                opacity="0.1"
-                d="M348.906 49.2812L406 0V108.113L348.906 165.719V49.2812Z"
-                fill="url(#paint9_linear_116:1151)"
-              />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_116:1151"
-                x1="50.0781"
-                y1="110.313"
-                x2="149.922"
-                y2="129.859"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_116:1151"
-                x1="180.141"
-                y1="207.062"
-                x2="33.6026"
-                y2="143.47"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_116:1151"
-                x1="171.016"
-                y1="123.25"
-                x2="218.542"
-                y2="123.507"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_116:1151"
-                x1="234.578"
-                y1="111.156"
-                x2="147.509"
-                y2="141.95"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_116:1151"
-                x1="85.5"
-                y1="71.5"
-                x2="100.174"
-                y2="270.716"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_116:1151"
-                x1="70.8907"
-                y1="187.234"
-                x2="85.0124"
-                y2="247.947"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint6_linear_116:1151"
-                x1="219.953"
-                y1="155.453"
-                x2="331.261"
-                y2="146.369"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint7_linear_116:1151"
-                x1="349.187"
-                y1="44.6406"
-                x2="281.112"
-                y2="166.552"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint8_linear_116:1151"
-                x1="394.75"
-                y1="64.3284"
-                x2="369.525"
-                y2="-29.8829"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint9_linear_116:1151"
-                x1="410"
-                y1="8.00001"
-                x2="332.729"
-                y2="32.2741"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
       </section>
     </>

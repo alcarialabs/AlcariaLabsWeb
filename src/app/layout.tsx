@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from 'react';
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -26,7 +27,9 @@ export default function RootLayout({
             <CookieConsentBanner />
             <ScrollToTop />
           </Providers>
-          <GoogleAnalytics />
+          <Suspense fallback={null}>
+            <GoogleAnalytics />
+          </Suspense>
         </CookieConsentProvider>
       </body>
     </html>

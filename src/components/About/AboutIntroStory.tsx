@@ -32,7 +32,7 @@ const AboutIntroStory = () => {
                 <strong>Decidimos cambiar eso.</strong>
               </p>
               <p className="text-lg leading-relaxed text-body-color">
-                ALCARIA fue fundada por [Mencionar brevemente origen, ej: expertos en negocio y tecnología / emprendedores apasionados por las PYMEs] con una misión clara: 
+                ALCARIA fue fundada por tres apasionados de la tecnología y el emprendimiento con una misión clara: 
                 <strong>democratizar la innovación</strong> y hacerla accesible, práctica y rentable para empresas como la tuya. Somos tu socio en la transformación digital inteligente.
               </p>
             </div>
