@@ -15,17 +15,17 @@ const Hero = () => {
       id="home"
       className="relative z-10 flex h-screen items-center justify-center overflow-hidden bg-white dark:bg-gray-dark"
     >
-      <div className="container">
+      <div className="container px-4">
         <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="w-full max-w-[1100px] px-4 text-center">
+          <div className="w-full max-w-[1100px] text-center">
             <MotionDiv
-              className="flex flex-col items-center justify-center space-y-8 px-4 text-center"
+              className="flex flex-col items-center justify-center space-y-6 px-4 text-center sm:space-y-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <MotionH1
-                className="font-syne text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
+                className="font-syne text-3xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
@@ -51,7 +51,7 @@ const Hero = () => {
               >
                 <Link
                   href="#contact"
-                  className="rounded-full bg-white px-8 py-4 text-base font-semibold text-[#0344DC] shadow-md duration-300 hover:bg-gray-100"
+                  className="rounded-full bg-white px-6 py-4 text-base font-semibold text-[#0344DC] shadow-md duration-300 hover:bg-gray-100 sm:px-8"
                 >
                   Descubre Cómo
                 </Link>

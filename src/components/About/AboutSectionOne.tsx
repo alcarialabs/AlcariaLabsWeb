@@ -56,13 +56,13 @@ const AboutSectionOne = () => {
                   src="/images/about/ai_chip.jpg"
                   alt="Acerca de ALCARIA"
                   fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+                  className="mx-auto max-w-full dark:hidden dark:drop-shadow-none lg:mr-0 md:drop-shadow-three"
                 />
                 <Image
                   src="/images/about/ai_chip.jpg"
                   alt="Acerca de ALCARIA"
                   fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                  className="mx-auto hidden max-w-full dark:block dark:drop-shadow-none lg:mr-0 md:drop-shadow-three"
                 />
               </div>
             </div>

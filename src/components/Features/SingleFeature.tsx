@@ -5,13 +5,13 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
   return (
     <div className="w-full text-center">
       <div className="wow fadeInUp" data-wow-delay=".15s">
-        <div className="mx-auto mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-xl bg-primary bg-opacity-10 text-primary">
+        <div className="mx-auto mb-8 flex h-[60px] w-[60px] items-center justify-center rounded-lg bg-primary bg-opacity-10 text-primary md:mb-10 md:h-[70px] md:w-[70px] md:rounded-xl">
           {icon}
         </div>
-        <h3 className="mb-5 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+        <h3 className="mb-4 text-lg font-bold text-space-blue dark:text-white sm:text-xl md:mb-5 lg:text-xl xl:text-2xl">
           {title}
         </h3>
-        <p className="pr-[10px] text-base font-medium leading-relaxed text-body-color">
+        <p className="px-2 text-base font-medium leading-relaxed text-body-color sm:px-0">
           {paragraph}
         </p>
       </div>

@@ -3,9 +3,12 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
+import CookieConsentBanner from "@/components/Common/CookieConsentBanner";
+import { CookieConsentProvider } from "@/context/CookieConsentContext";
 import "../styles/index.css";
 import "node_modules/react-modal-video/css/modal-video.css";
 import { Providers } from "./providers";
+import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
 
 export default function RootLayout({
   children,
@@ -15,12 +18,16 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body className="bg-white">
-        <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
-        </Providers>
+        <CookieConsentProvider>
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+            <CookieConsentBanner />
+            <ScrollToTop />
+          </Providers>
+          <GoogleAnalytics />
+        </CookieConsentProvider>
       </body>
     </html>
   );
