@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} ${syne.variable}`} suppressHydrationWarning>
-      <body className="bg-white" font-poppins>
+      <body className="bg-white font-poppins">
         <CookieConsentProvider>
           <Providers>
             <Header />
