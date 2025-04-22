@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="en" className={syne.variable}>
       <body className="bg-white">
         <CookieConsentProvider>
           <Providers>
