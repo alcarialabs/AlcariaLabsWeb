@@ -59,7 +59,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["'Inter'", ...fontFamily.sans],
-        syne: ["'Syne'", ...fontFamily.sans],
+        syne: "var(--font-syne)",,
         poppins: ['"Poppins"', "sans-serif"],
         playfair: ['"Playfair Display"', "serif"],
       },
