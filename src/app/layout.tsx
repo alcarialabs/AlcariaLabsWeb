@@ -11,6 +11,16 @@ import "node_modules/react-modal-video/css/modal-video.css";
 import { Providers } from "./providers";
 import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
 
+// ✅ Importamos la fuente Syne desde next/font/google
+import { Syne } from 'next/font/google';
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['600'],
+  variable: '--font-syne',
+  display: 'swap',
+});
+
 export default function RootLayout({
   children,
 }: {
