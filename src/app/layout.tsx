@@ -12,7 +12,14 @@ import { Providers } from "./providers";
 import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
 
 // ✅ Importamos la fuente Syne desde next/font/google
-import { Syne } from 'next/font/google';
+import { Poppins, Syne } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 const syne = Syne({
   subsets: ['latin'],
@@ -27,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en" className={syne.variable}>
-      <body className="bg-white">
+    <html lang="en" className={`${poppins.variable} ${syne.variable}`} suppressHydrationWarning>
+      <body className="bg-white" font-poppins>
         <CookieConsentProvider>
           <Providers>
             <Header />
