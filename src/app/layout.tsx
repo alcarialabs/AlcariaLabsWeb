@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en" className={syne.variable}>
-      <body className="bg-white">
+      <body className="bg-white" font-[var(--font-syne)]>
         <CookieConsentProvider>
           <Providers>
             <Header />
