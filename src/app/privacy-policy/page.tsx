@@ -9,7 +9,7 @@ const PrivacyPolicyPage = () => {
   return (
     <main className="pt-32 pb-16 md:pb-20 lg:pb-28">
       <div className="container">
-        <h1 className="mb-8 text-3xl font-bold text-space-blue">Política de Privacidad</h1>
+        <h1 className="mb-8 text-3xl font-bold text-space-blue font-syne">Política de Privacidad</h1>
         <div className="prose prose-lg max-w-none text-body-color">
           <p>Última actualización: {new Date().toLocaleDateString('es-ES')}</p>
           <h2>1. Información que Recopilamos</h2>

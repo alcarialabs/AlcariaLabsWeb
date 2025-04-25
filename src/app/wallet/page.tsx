@@ -18,7 +18,7 @@ const FeatureItem = ({ icon, title, text }) => (
     <div className="mx-auto mb-5 flex h-[50px] w-[50px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
       {icon}
     </div>
-    <h3 className="text-space-blue mb-3 text-xl font-bold dark:text-white">
+    <h3 className="text-space-blue mb-3 text-xl font-bold dark:text-white font-syne">
       {title}
     </h3>
     <p className="text-base font-medium text-body-color">{text}</p>
@@ -30,7 +30,7 @@ const ListItem = ({ icon, title, text }) => (
   <div className="mb-6 flex items-start">
     <div className="mr-4 flex-shrink-0 text-primary">{icon}</div>
     <div>
-      <h4 className="text-space-blue mb-1 text-lg font-semibold dark:text-white">
+      <h4 className="text-space-blue mb-1 text-lg font-semibold dark:text-white font-syne">
         {title}
       </h4>
       <p className="text-base text-body-color">{text}</p>
@@ -48,7 +48,7 @@ const WalletPage = () => {
             {/* Columna de Texto */}
             <div className="w-full px-4 lg:w-1/2">
               <div className="mb-12 max-w-[570px] lg:mb-0">
-                <h1 className="text-space-blue mb-5 text-3xl font-bold leading-tight dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                <h1 className="text-space-blue mb-5 text-3xl font-bold leading-tight dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight font-syne">
                   El Futuro en su Bolsillo: Tarjetas Wallet para tu Negocio
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
@@ -195,7 +195,7 @@ const WalletPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-black dark:text-white">
+                <h3 className="mb-3 text-xl font-bold text-black dark:text-white font-syne">
                   Diseña Fácilmente
                 </h3>
                 <p className="text-body-color">
@@ -222,7 +222,7 @@ const WalletPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-black dark:text-white">
+                <h3 className="mb-3 text-xl font-bold text-black dark:text-white font-syne">
                   Distribuye al Instante
                 </h3>
                 <p className="text-body-color">
@@ -249,7 +249,7 @@ const WalletPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-black dark:text-white">
+                <h3 className="mb-3 text-xl font-bold text-black dark:text-white font-syne">
                   Gestiona y Notifica
                 </h3>
                 <p className="text-body-color">
@@ -430,7 +430,7 @@ const WalletPage = () => {
         <section className="py-16 md:py-20 lg:py-28">
           <div className="container">
             <div className="mx-auto max-w-[600px] text-center">
-              <h2 className="mb-4 text-3xl font-bold text-black dark:text-white sm:text-4xl">
+              <h2 className="mb-4 text-3xl font-bold text-black dark:text-white sm:text-4xl font-syne">
                 ¿Listo para Modernizar tu Comunicación?
               </h2>
               <p className="mb-8 text-base text-body-color">

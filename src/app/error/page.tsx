@@ -140,7 +140,7 @@ const ErrorPage = () => {
                     </defs>
                   </svg>
                 </div>
-                <h3 className="mb-6 text-3xl font-bold text-space-blue dark:text-white sm:text-4xl">
+                <h3 className="mb-6 text-3xl font-bold text-space-blue dark:text-white sm:text-4xl font-syne">
                   ¡Houston, tenemos un 404!
                 </h3>
                 <p className="mb-10 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg sm:leading-relaxed">

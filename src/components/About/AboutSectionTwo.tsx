@@ -57,7 +57,7 @@ const AboutSectionTwo = () => {
                     <CpuChipIconSVG className="h-8 w-8" />
                   </div>
                   <div>
-                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
                       IA Aplicada: Decisiones Inteligentes
                     </h3>
                     <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
@@ -72,7 +72,7 @@ const AboutSectionTwo = () => {
                     <CogIconSVG className="h-8 w-8" />
                   </div>
                   <div>
-                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
                       Automatización que Libera Potencial
                     </h3>
                     <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
@@ -87,7 +87,7 @@ const AboutSectionTwo = () => {
                     <ChatBubbleIconSVG className="h-8 w-8" />
                   </div>
                   <div>
-                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
                       Agentes Inteligentes que Mejoran la Experiencia
                     </h3>
                     <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">

@@ -35,7 +35,7 @@ const Contact = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div className="mb-12 rounded-xl border border-gray-200 bg-white p-8 shadow-lg dark:border-gray-700 dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-              <h2 className="mb-3 text-2xl font-bold text-space-blue dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+              <h2 className="mb-3 text-2xl font-bold text-space-blue dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl font-syne">
                 ¿Listo para Transformar tu Negocio con Wallet e IA?
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
