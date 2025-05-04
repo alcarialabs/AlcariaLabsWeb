@@ -29,13 +29,10 @@ export default function Home() {
         <Features />
       </AnimatedSection>
       <AnimatedSection>
-        <AboutSectionThree />
-      </AnimatedSection>
-      <AnimatedSection>
         <AboutSectionOne />
       </AnimatedSection>
       <AnimatedSection>
-        <AboutSectionTwo />
+        <AboutSectionThree />
       </AnimatedSection>
       <AnimatedSection>
         <Testimonials />
