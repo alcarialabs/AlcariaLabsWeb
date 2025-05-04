@@ -27,7 +27,7 @@ const AboutSectionWallet = () => {
   return (
     <section className="pt-16 md:pt-20 lg:pt-28">
       <div className="container">
-        <div className="border-b border-frontier-gray pb-16 md:pb-20 lg:pb-28">
+        <div className="pb-16 md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             {/* Imagen (lado izquierdo) */}
             <div className="w-full px-4 lg:w-1/2">
