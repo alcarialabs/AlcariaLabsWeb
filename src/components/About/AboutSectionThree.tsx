@@ -39,7 +39,7 @@ const AboutSectionWallet = () => {
                 mb="44px"
               />
 
-              <div className="mb-12 max-w-[570px] lg:mb-0 space-y-8" data-wow-delay=".15s">
+              <div className="mb-12 lg:mb-0 space-y-8" data-wow-delay=".15s">
                 {/* Beneficio 1: Digitalización */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 pt-1"><DevicePhoneMobileIcon /></div>
@@ -81,22 +81,22 @@ const AboutSectionWallet = () => {
               </div>
             </div>
             {/* Imagen (lado derecho) */}
-               <div className="w-full px-4 lg:w-1/2">
-                 <div className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] lg:mb-0 lg:mr-0 overflow-hidden rounded-3xl">
-                   <Image
-                     src="/images/about/mockup_wallet_center.png"
-                     alt="Tarjetas Wallet ALCARIA"
-                     fill
-                     className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                   />
-                   <Image
-                     src="/images/about/mockup_wallet_center.png"
-                     alt="Tarjetas Wallet ALCARIA"
-                     fill
-                     className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                   />
-                 </div>
-               </div>
+            <div className="w-full px-4 lg:w-1/2">
+              <div className="relative mb-12 aspect-[25/24] max-w-[500px] lg:mb-0 lg:ml-auto overflow-hidden rounded-3xl">
+                <Image
+                  src="/images/about/mockup_wallet_center.png"
+                  alt="Tarjetas Wallet ALCARIA"
+                  fill
+                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+                />
+                <Image
+                  src="/images/about/mockup_wallet_center.png"
+                  alt="Tarjetas Wallet ALCARIA"
+                  fill
+                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
