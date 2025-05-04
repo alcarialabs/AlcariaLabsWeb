@@ -6,8 +6,14 @@ import React from 'react';
 import blogData from "@/components/Blog/blogData";
 import AnimatedSection from "@/components/Common/AnimatedSection"; // Opcional para animar la entrada
 
-// Generar rutas estáticas para cada post basado en el slug
-export function generateStaticParams() {
+// Define the expected type for static params
+type BlogStaticParams = {
+  slug: string;
+};
+
+// Generate static paths for each post based on the slug
+// Add explicit return type
+export function generateStaticParams(): BlogStaticParams[] {
   return blogData.map((post) => ({
     slug: post.slug,
   }));
