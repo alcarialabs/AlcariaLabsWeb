@@ -23,11 +23,10 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-    // Limpieza del event listener al desmontar
     return () => {
       window.removeEventListener("scroll", handleStickyNavbar);
     };
-  }, []); // Añadir array de dependencias vacío para que se ejecute solo una vez
+  }, []);
 
   // Submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
@@ -47,7 +46,7 @@ const Header = () => {
       <header
         className={`header left-0 top-0 z-40 flex w-full items-center ${
           !isHomePage || sticky
-            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
+            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
             : "absolute bg-transparent"
         }`}
       >
@@ -102,9 +101,9 @@ const Header = () => {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-[250px] duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:p-0 lg:opacity-100 ${
                     navbarOpen
-                      ? "visibility top-full opacity-100"
+                      ? "visibility top-full opacity-100 rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 shadow-lg dark:border-body-color/20 dark:bg-dark"
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
@@ -115,14 +114,13 @@ const Header = () => {
                           <Link
                             href={menuItem.path}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                              usePathName === menuItem.path
-                                ? !isHomePage || sticky
-                                  ? "text-primary"
-                                  : "text-white"
-                                : !isHomePage || sticky
-                                  ? "text-dark hover:text-primary"
-                                  : "text-white/70 hover:text-white"
+                              navbarOpen ? 'text-dark dark:text-white' : ''
+                            } ${
+                              isHomePage
+                                ? (sticky ? 'lg:text-dark lg:dark:text-white lg:hover:text-primary' : 'lg:text-white lg:hover:text-white lg:dark:text-white lg:group-hover:opacity-70')
+                                : 'lg:text-dark lg:dark:text-white lg:hover:text-primary'
                             }`}
+                            onClick={() => setNavbarOpen(false)}
                           >
                             {menuItem.title}
                           </Link>
@@ -130,11 +128,23 @@ const Header = () => {
                           <>
                             <p
                               onClick={() => handleSubmenu(index)}
-                              className={`flex cursor-pointer items-center justify-between py-2 text-base group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${!isHomePage || sticky ? "text-dark" : "text-white/70 group-hover:text-white"}`}
+                              className={`flex cursor-pointer items-center justify-between py-2 text-base group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                                navbarOpen ? 'text-dark dark:text-white' : ''
+                              } ${
+                                isHomePage
+                                  ? (sticky ? 'lg:text-dark lg:dark:text-white' : 'lg:text-white/70 lg:group-hover:text-white lg:dark:text-white')
+                                  : 'lg:text-dark lg:dark:text-white'
+                              }`}
                             >
                               {menuItem.title}
                               <span
-                                className={`pl-3 ${!isHomePage || sticky ? "text-dark" : "text-white/70"}`}
+                                className={`pl-3 ${
+                                  navbarOpen ? 'text-dark dark:text-white' : ''
+                                } ${
+                                  isHomePage
+                                    ? (sticky ? 'lg:text-dark lg:dark:text-white' : 'lg:text-white/70 lg:dark:text-white')
+                                    : 'lg:text-dark lg:dark:text-white'
+                                }`}
                               >
                                 <svg width="25" height="24" viewBox="0 0 25 24">
                                   <path
@@ -147,7 +157,7 @@ const Header = () => {
                               </span>
                             </p>
                             <div
-                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
+                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
@@ -155,7 +165,8 @@ const Header = () => {
                                 <Link
                                   href={submenuItem.path}
                                   key={index}
-                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary lg:px-3"
+                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white dark:hover:text-primary lg:px-3"
+                                  onClick={() => setNavbarOpen(false)}
                                 >
                                   {submenuItem.title}
                                 </Link>

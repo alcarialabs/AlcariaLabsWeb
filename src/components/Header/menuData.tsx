@@ -19,12 +19,12 @@ const menuData: Menu[] = [
     path: "/wallet",
     newTab: false,
   },
-  // {
-  //   id: 33,
-  //   title: "Blog",
-  //   path: "/blog",
-  //   newTab: false,
-  // },
+  {
+    id: 2.8,
+    title: "Blog",
+    path: "/blog",
+    newTab: false,
+  },
   {
     id: 3,
     title: "Contacto",

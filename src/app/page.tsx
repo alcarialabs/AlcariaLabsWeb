@@ -40,8 +40,9 @@ export default function Home() {
       <AnimatedSection>
         <Testimonials />
       </AnimatedSection>
-      {/* <Pricing /> */}
-      {/* <Blog /> */}
+      <AnimatedSection>
+        <Blog limitPosts={3} showAllLink={true} />
+      </AnimatedSection>
       <AnimatedSection>
         <Contact />
       </AnimatedSection>

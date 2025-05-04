@@ -1,26 +1,25 @@
 import Image from "next/image";
 // No importar iconos, usar SVG directamente
 
-// SVG para CpuChipIcon (outline)
-const CpuChipIconSVG = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
-  </svg>
-);
-
-// SVG para CogIcon (outline)
-const CogIconSVG = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m18 0h-1.5m-15 0a7.5 7.5 0 1 1 15 0m-15 0h-1.5m15 0h1.5m-15 0a7.5 7.5 0 0 1 15 0m-15 0h-1.5m15 0h1.5M12 4.5v-1.5m0 15v1.5" />
+// --- Nuevos Iconos SVG --- 
+const ChartBarIcon = ({ className }: { className?: string }) => ( // Icono para IA Aplicada
+ <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+   <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
  </svg>
 );
 
-// SVG para ChatBubbleOvalLeftEllipsisIcon (outline)
-const ChatBubbleIconSVG = ({ className }: { className?: string }) => (
+const BoltIcon = ({ className }: { className?: string }) => ( // Icono para Automatización
  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M18 10.5c0 .941-.062 1.854-.18 2.739a5.487 5.487 0 0 1-.762 1.64M18 10.5c0-.941.062-1.854.18-2.739a5.487 5.487 0 0 0 .762-1.64M18 10.5H6c-2.9 0-5.25 2.35-5.25 5.25v.75c0 1.214.296 2.359.826 3.368m11.548-10.376a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Zm-4.5 3.75h.008v.008h-.008v-.008Zm2.25 0h.008v.008h-.008v-.008Zm2.25 0h.008v.008h-.008v-.008Z" />
-  </svg>
+   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+ </svg>
 );
+
+const ChatBubbleLeftRightIcon = ({ className }: { className?: string }) => ( // Icono para Agentes Inteligentes
+ <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+   <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 12 3.054c-2.69.147-5.282.61-7.74 1.346A2.125 2.125 0 0 0 2.25 6.637v4.286c0 1.135.847 2.1 1.98 2.193.34.027.68.052 1.02.072v3.091l3-3c.967-.023 1.91-.078 2.83-.156" />
+ </svg>
+);
+// -------------------------
 
 const AboutSectionTwo = () => {
   return (
@@ -48,13 +47,13 @@ const AboutSectionTwo = () => {
                 />
               </div>
             </div>
-            {/* Textos (lado derecho) - Con iconos SVG */}
+            {/* Textos (lado derecho) - Con nuevos iconos SVG */}
             <div className="w-full px-4 lg:w-1/2">
               <div className="max-w-[470px] space-y-9"> {/* Añadir space-y para espaciado uniforme */}
                 {/* Punto 1: IA Aplicada */}
                 <div className="flex items-start">
                   <div className="mr-5 flex-shrink-0 text-primary">
-                    <CpuChipIconSVG className="h-8 w-8" />
+                    <ChartBarIcon className="h-8 w-8" />
                   </div>
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
@@ -69,7 +68,7 @@ const AboutSectionTwo = () => {
                 {/* Punto 2: Automatización */}
                 <div className="flex items-start">
                    <div className="mr-5 flex-shrink-0 text-primary">
-                    <CogIconSVG className="h-8 w-8" />
+                    <BoltIcon className="h-8 w-8" />
                   </div>
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
@@ -84,7 +83,7 @@ const AboutSectionTwo = () => {
                 {/* Punto 3: Agentes Inteligentes */}
                  <div className="flex items-start">
                    <div className="mr-5 flex-shrink-0 text-primary">
-                    <ChatBubbleIconSVG className="h-8 w-8" />
+                    <ChatBubbleLeftRightIcon className="h-8 w-8" />
                   </div>
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">

@@ -1,40 +1,99 @@
 "use client";
 
+import { useState } from 'react';
 import { useTheme } from "next-themes";
+import { db } from "../../../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+
+    if (!name || !email) {
+        setError("Por favor, completa tu nombre y correo.");
+        setLoading(false);
+        return;
+    }
+
+    try {
+      await addDoc(collection(db, "newsletterSubscribers"), {
+        name: name,
+        email: email,
+        subscribedAt: new Date(),
+      });
+      setSuccess(true);
+      setName("");
+      setEmail("");
+    } catch (err) {
+      console.error("Error subscribing to newsletter:", err);
+      setError("Error al suscribirse. Inténtalo de nuevo.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="relative z-10">
-      <h3 className="mb-4 text-2xl font-bold leading-tight text-space-blue dark:text-white">
+      <h3 className="mb-4 text-2xl font-bold leading-tight text-space-blue dark:text-white font-syne">
         Suscríbete para recibir las últimas novedades
       </h3>
       <p className="mb-11 border-b border-frontier-gray/40 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
         Recibe en tu correo actualizaciones, consejos y casos de éxito sobre nuestras soluciones de automatización y transformación digital.
       </p>
-      <div>
+
+      <form onSubmit={handleSubscribe}>
+        {success && (
+          <p className="mb-4 text-center text-sm text-green-600 dark:text-green-400">
+            ¡Suscripción realizada con éxito! Gracias.
+          </p>
+        )}
+        {error && (
+          <p className="mb-4 text-center text-sm text-red-600 dark:text-red-400">
+            {error}
+          </p>
+        )}
+
         <input
           type="text"
           name="name"
           placeholder="Ingresa tu nombre"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="mb-4 w-full rounded-xl border border-gray-300 bg-white px-6 py-3 text-base text-body-color outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary"
+          required
+          disabled={loading}
         />
         <input
           type="email"
           name="email"
           placeholder="Ingresa tu correo"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="mb-4 w-full rounded-xl border border-gray-300 bg-white px-6 py-3 text-base text-body-color outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:focus:border-primary"
+          required
+          disabled={loading}
         />
-        <input
+        <button
           type="submit"
-          value="Suscribirse"
-          className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-xl bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
-        />
+          disabled={loading}
+          className={`mb-5 flex w-full cursor-pointer items-center justify-center rounded-xl bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        >
+          {loading ? 'Suscribiendo...' : 'Suscribirse'}
+        </button>
         <p className="text-center text-base leading-relaxed text-body-color dark:text-body-color-dark">
           Sin spam garantizado: no recibirás correos no deseados.
         </p>
-      </div>
+      </form>
 
       <div>
         <span className="absolute left-2 top-7">

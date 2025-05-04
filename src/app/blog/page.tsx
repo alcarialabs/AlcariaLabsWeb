@@ -1,100 +1,43 @@
-import SingleBlog from "@/components/Blog/SingleBlog";
-import blogData from "@/components/Blog/blogData";
+import Blog from "@/components/Blog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import AnimatedSection from "@/components/Common/AnimatedSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | ALCARIA - Automatización y Chatbots",
-  description:
-    "Descubre artículos y noticias sobre transformación digital, automatización y chatbots personalizados para impulsar la eficiencia operativa de tu empresa.",
-  // otros metadata que necesites agregar
+  title: "Blog | ALCARIA - IA, Automatización y Wallet",
+  description: "Lee nuestros últimos artículos sobre transformación digital, inteligencia artificial, tarjetas wallet y automatización para PYMEs.",
 };
 
-const Blog = () => {
+const BlogPage = () => {
   return (
     <>
-      <Breadcrumb
+      {/* Opción 1: Usar Breadcrumb (si se quiere mantener) */}
+      {/* <Breadcrumb
         pageName="Blog"
-        description="Explora nuestros artículos y descubre cómo la automatización y los chatbots personalizados están transformando la forma en que las empresas operan y se comunican."
-      />
+        description="Descubre insights y novedades sobre cómo la tecnología puede impulsar tu negocio."
+      /> */}
 
-      <section className="pb-[120px] pt-[120px]">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
-            {blogData.map((blog) => (
-              <div
-                key={blog.id}
-                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
-              >
-                <SingleBlog blog={blog} />
-              </div>
-            ))}
+      {/* Opción 2: Usar padding superior (más consistente con otras páginas) */}
+      <main className="pb-16 md:pb-20 lg:pb-28">
+        {/* Envolver el bloque del título en AnimatedSection */}
+        <AnimatedSection className="pt-36 md:pt-40 lg:pt-44">
+          <div className="container mb-12 md:mb-16 lg:mb-20 text-center">
+              <h1 className="text-3xl font-bold text-space-blue dark:text-white sm:text-4xl md:text-[45px] font-syne">
+                  Blog ALCARIA: Soluciones Inteligentes para tu Negocio
+              </h1>
+              <p className="text-base text-body-color md:text-lg mt-4 max-w-2xl mx-auto">
+                  Mantente al día con las últimas estrategias y tecnologías en IA, Wallet y automatización diseñadas para impulsar la eficiencia y crecimiento de tu empresa.
+              </p>
           </div>
+        </AnimatedSection>
 
-          {/* Paginación */}
-          <div className="-mx-4 flex flex-wrap" data-wow-delay=".15s">
-            <div className="w-full px-4">
-              <ul className="flex items-center justify-center pt-8">
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    Prev
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    1
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    2
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    3
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <span className="flex h-9 min-w-[36px] cursor-not-allowed items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color">
-                    ...
-                  </span>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    12
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                  >
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* Renderizar Blog sin límite para mostrar todos */}
+        <AnimatedSection>
+          <Blog />
+        </AnimatedSection>
+      </main>
     </>
   );
 };
 
-export default Blog;
+export default BlogPage;
