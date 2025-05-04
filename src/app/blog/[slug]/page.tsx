@@ -39,8 +39,8 @@ export async function generateMetadata(
   };
 }
 
-// Define the page component using React.FC for explicit typing
-const SingleBlogPage: React.FC<{ params: { slug: string } }> = ({ params }) => {
+// Define the page component letting TypeScript infer the props type
+const SingleBlogPage = ({ params }) => {
   const slug = params.slug;
   const post = blogData.find((p) => p.slug === slug);
 
