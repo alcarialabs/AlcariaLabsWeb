@@ -29,23 +29,7 @@ const AboutSectionWallet = () => {
       <div className="container">
         <div className="pb-16 md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
-            {/* Imagen (lado izquierdo) */}
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] lg:mb-0 lg:mr-0 overflow-hidden rounded-3xl">
-                <Image
-                  src="/images/about/mockup_wallet_center.png"
-                  alt="Tarjetas Wallet ALCARIA"
-                  fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/about/mockup_wallet_center.png"
-                  alt="Tarjetas Wallet ALCARIA"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
-              </div>
-            </div>
+            
 
             {/* Textos y Beneficios (lado derecho - Refinado) */}
             <div className="w-full px-4 lg:w-1/2">
@@ -88,6 +72,24 @@ const AboutSectionWallet = () => {
                      </p>
                    </div>
                 </div>
+
+               {/* Imagen (lado izquierdo) */}
+               <div className="w-full px-4 lg:w-1/2">
+                 <div className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] lg:mb-0 lg:mr-0 overflow-hidden rounded-3xl">
+                   <Image
+                     src="/images/about/mockup_wallet_center.png"
+                     alt="Tarjetas Wallet ALCARIA"
+                     fill
+                     className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
+                   />
+                   <Image
+                     src="/images/about/mockup_wallet_center.png"
+                     alt="Tarjetas Wallet ALCARIA"
+                     fill
+                     className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                   />
+                 </div>
+               </div>
 
                 {/* Botón CTA */}
                 <Link href="/wallet"
