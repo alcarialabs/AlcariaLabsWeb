@@ -31,7 +31,7 @@ const AboutSectionWallet = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             
 
-            {/* Textos y Beneficios (lado derecho - Refinado) */}
+            {/* Textos y Beneficios (lado izquierdp) */}
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
                 title="Tarjetas Wallet: Conexión Directa, Experiencia Moderna"
@@ -73,7 +73,14 @@ const AboutSectionWallet = () => {
                    </div>
                 </div>
 
-               {/* Imagen (lado izquierdo) */}
+                {/* Botón CTA */}
+                <Link href="/wallet"
+                  className="mt-8 inline-block rounded-lg bg-primary px-6 py-3 text-base font-medium text-white shadow-md transition duration-300 hover:bg-primary/90">
+                  Descubre el Poder de Wallet
+                </Link>
+              </div>
+            </div>
+            {/* Imagen (lado derecho) */}
                <div className="w-full px-4 lg:w-1/2">
                  <div className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] lg:mb-0 lg:mr-0 overflow-hidden rounded-3xl">
                    <Image
@@ -90,14 +97,6 @@ const AboutSectionWallet = () => {
                    />
                  </div>
                </div>
-
-                {/* Botón CTA */}
-                <Link href="/wallet"
-                  className="mt-8 inline-block rounded-lg bg-primary px-6 py-3 text-base font-medium text-white shadow-md transition duration-300 hover:bg-primary/90">
-                  Descubre el Poder de Wallet
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>
