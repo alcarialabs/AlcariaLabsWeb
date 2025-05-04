@@ -5,10 +5,6 @@ import Link from "next/link";
 import blogData from "@/components/Blog/blogData";
 import AnimatedSection from "@/components/Common/AnimatedSection"; // Opcional para animar la entrada
 
-type Props = {
-  params: { slug: string };
-};
-
 // Generar rutas estáticas para cada post basado en el slug
 export async function generateStaticParams() {
   return blogData.map((post) => ({
@@ -16,8 +12,10 @@ export async function generateStaticParams() {
   }));
 }
 
-// Generar metadata dinámica para cada post
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// Generate dynamic metadata for each post using inline type
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
   const slug = params.slug;
   const post = blogData.find((p) => p.slug === slug);
 
@@ -34,7 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const SingleBlogPage = ({ params }: Props) => {
+// Define the page component using inline type for params
+const SingleBlogPage = ({ params }: { params: { slug: string } }) => {
   const slug = params.slug;
   const post = blogData.find((p) => p.slug === slug);
 
