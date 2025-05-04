@@ -29,7 +29,7 @@ export default function Home() {
         <Features />
       </AnimatedSection>
       <AnimatedSection>
-        <AboutSectionOne />
+        <AboutSectionTwo />
       </AnimatedSection>
       <AnimatedSection>
         <AboutSectionThree />
