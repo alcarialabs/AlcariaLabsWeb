@@ -7,7 +7,7 @@ import blogData from "@/components/Blog/blogData";
 import AnimatedSection from "@/components/Common/AnimatedSection"; // Opcional para animar la entrada
 
 // Generar rutas estáticas para cada post basado en el slug
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return blogData.map((post) => ({
     slug: post.slug,
   }));
