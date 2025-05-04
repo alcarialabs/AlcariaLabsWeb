@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import React from 'react';
 import blogData from "@/components/Blog/blogData";
 import AnimatedSection from "@/components/Common/AnimatedSection"; // Opcional para animar la entrada
 
@@ -32,8 +33,8 @@ export async function generateMetadata(
   };
 }
 
-// Define the page component using inline type for params
-const SingleBlogPage = ({ params }: { params: { slug: string } }) => {
+// Define the page component using React.FC for explicit typing
+const SingleBlogPage: React.FC<{ params: { slug: string } }> = ({ params }) => {
   const slug = params.slug;
   const post = blogData.find((p) => p.slug === slug);
 
