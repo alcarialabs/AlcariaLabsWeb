@@ -13,4 +13,5 @@ export type Blog = {
   tags: string[];
   publishDate: string;
   slug?: string;
+  content: string;
 };
