@@ -18,7 +18,7 @@ const FeatureItem = ({ icon, title, text }) => (
     <div className="mx-auto mb-5 flex h-[50px] w-[50px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
       {icon}
     </div>
-    <h3 className="text-space-blue mb-3 text-xl font-bold dark:text-white font-syne">
+    <h3 className="text-space-blue mb-3 text-2xl font-bold dark:text-white font-syne">
       {title}
     </h3>
     <p className="text-base font-medium text-body-color">{text}</p>
@@ -51,7 +51,7 @@ const WalletPage = () => {
                 <h1 className="text-space-blue mb-5 text-3xl font-bold leading-tight dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight font-syne">
                   El Futuro en su Bolsillo: Tarjetas Wallet para tu Negocio
                 </h1>
-                <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
+                <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-2xl">
                   Conecta, fideliza y sorprende a tus clientes con tarjetas
                   digitales para Apple y Google Wallet.{" "}
                   <strong className="text-space-blue">
@@ -61,7 +61,7 @@ const WalletPage = () => {
                 <div className="flex flex-col items-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="#contact" // O enlace a un formulario/demo específico de Wallet
-                    className="rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    className="rounded-full font-syne bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
                     Solicita una Demo
                   </Link>
@@ -195,7 +195,7 @@ const WalletPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-black dark:text-white font-syne">
+                <h3 className="mb-3 text-2xl font-bold text-black dark:text-white font-syne">
                   Diseña Fácilmente
                 </h3>
                 <p className="text-body-color">
@@ -222,7 +222,7 @@ const WalletPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-black dark:text-white font-syne">
+                <h3 className="mb-3 text-2xl font-bold text-black dark:text-white font-syne">
                   Distribuye al Instante
                 </h3>
                 <p className="text-body-color">
@@ -249,7 +249,7 @@ const WalletPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-black dark:text-white font-syne">
+                <h3 className="mb-3 text-2xl font-bold text-black dark:text-white font-syne">
                   Gestiona y Notifica
                 </h3>
                 <p className="text-body-color">
@@ -265,7 +265,7 @@ const WalletPage = () => {
 
       {/* Sección Características Detalladas - Nuevo Layout (Lista 2 Columnas) */}
       <AnimatedSection>
-        <section className="py-16 md:py-20 lg:py-28">
+        <section className="py-16 md:py-20 lg:py-28 font-semibold font-syne text-2xl">
           <div className="container">
             <SectionTitle
               title="Funcionalidades Diseñadas para el Éxito"
@@ -292,7 +292,11 @@ const WalletPage = () => {
                     />
                   </svg>
                 }
-                title="Personalización Completa"
+                title={
+                  <span className="font-syne font-semibold text-2xl">
+                    Personalización Completa
+                  </span>
+                }
                 text="Adapta colores, logos, campos e imágenes a tu identidad de marca."
               />
               <ListItem
@@ -312,7 +316,11 @@ const WalletPage = () => {
                     />
                   </svg>
                 }
-                title="Notificaciones Push Inteligentes"
+                title={
+                  <span className="font-syne font-semibold text-2xl">
+                    Notificaciones Push Inteligentes
+                  </span>
+                }
                 text="Envía mensajes segmentados por geolocalización, iBeacons o datos del cliente."
               />
               <ListItem
@@ -332,7 +340,11 @@ const WalletPage = () => {
                     />
                   </svg>
                 }
-                title="Analítica Detallada"
+                title={
+                  <span className="font-syne font-semibold text-2xl">
+                    Analítica Detallada
+                  </span>
+                }
                 text="Mide instalaciones, actualizaciones, visualizaciones y redenciones para optimizar tus campañas."
               />
               <ListItem
@@ -352,7 +364,11 @@ const WalletPage = () => {
                     />
                   </svg>
                 }
-                title="Integraciones Flexibles"
+                title={
+                  <span className="font-syne font-semibold text-2xl">
+                    Integraciones Flexibles
+                  </span>
+                }
                 text="Conecta con tu CRM, TPV, eCommerce o herramientas de automatización (API disponible)."
               />
               <ListItem
@@ -372,7 +388,11 @@ const WalletPage = () => {
                     />
                   </svg>
                 }
-                title="Máxima Seguridad"
+                title={
+                  <span className="font-syne font-semibold text-2xl">
+                    Máxima Seguridad
+                  </span>
+                }
                 text="Protección de datos GDPR y las mejores prácticas de seguridad para tu tranquilidad."
               />
               <ListItem
@@ -391,8 +411,12 @@ const WalletPage = () => {
                       d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502Z"
                     />
                   </svg>
-                } // Icono Idioma/Mundo
-                title="Gestión Multi-idioma"
+                }
+                title={
+                  <span className="font-syne font-semibold text-2xl">
+                    Gestión Multi-idioma
+                  </span>
+                }
                 text="Crea y gestiona tarjetas en diferentes idiomas para alcanzar a tu audiencia global."
               />
             </div>
@@ -440,7 +464,7 @@ const WalletPage = () => {
               </p>
               <Link
                 href="#contact" // O enlace específico
-                className="rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                className="rounded-full bg-primary px-8 py-4 text-base font-semibold font-syne text-white duration-300 ease-in-out hover:bg-primary/80"
               >
                 Hablar con un Experto
               </Link>

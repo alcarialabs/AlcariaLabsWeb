@@ -21,19 +21,19 @@ const AboutIntroStory = () => {
           {/* Texto Introductorio */}
           <div className="w-full px-4 lg:w-7/12">
             <div className="lg:pl-8">
-              <span className="mb-2 block text-base font-medium text-primary">
+              <span className="mb-2 block text-base font-semibold font-syne text-primary">
                 Quiénes Somos
               </span>
-              <h2 className="mb-5 text-3xl font-bold leading-tight text-space-blue sm:text-4xl sm:leading-tight">
+              <h2 className="mb-5 text-3xl font-semibold font-syne leading-tight text-space-blue sm:text-4xl sm:leading-tight">
                 Nacimos de la convicción de que cada PYME merece tecnología de vanguardia.
               </h2>
               <p className="mb-8 text-lg leading-relaxed text-body-color">
-                Observamos una brecha: herramientas poderosas como la IA, la automatización y las soluciones digitales avanzadas parecían reservadas solo para los gigantes. 
-                <strong>Decidimos cambiar eso.</strong>
+                Observamos una brecha: herramientas poderosas como la IA, la automatización y las soluciones digitales avanzadas parecían reservadas solo para los gigantes.  
+                <strong> Decidimos cambiar eso.</strong>
               </p>
               <p className="text-lg leading-relaxed text-body-color">
                 ALCARIA fue fundada por tres apasionados de la tecnología y el emprendimiento con una misión clara: 
-                <strong>democratizar la innovación</strong> y hacerla accesible, práctica y rentable para empresas como la tuya. Somos tu socio en la transformación digital inteligente.
+                <strong> democratizar la innovación</strong> y hacerla accesible, práctica y rentable para empresas como la tuya. Somos tu socio en la transformación digital inteligente.
               </p>
             </div>
           </div>

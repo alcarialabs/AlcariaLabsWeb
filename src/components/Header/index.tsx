@@ -55,9 +55,7 @@ const Header = () => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
-                  isHomePage && sticky ? "py-5 lg:py-2" : "py-8"
-                } `}
+                className={`header-logo block w-full py-5 lg:py-2`}
               >
                 <Image
                   src="/images/logo/LOGO_ALCARIA_AZUL.png"
@@ -113,7 +111,7 @@ const Header = () => {
                         {menuItem.path ? (
                           <Link
                             href={menuItem.path}
-                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 font-syne font-semibold ${
                               navbarOpen ? 'text-dark dark:text-white' : ''
                             } ${
                               isHomePage

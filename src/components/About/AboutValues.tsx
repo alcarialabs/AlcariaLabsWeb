@@ -40,7 +40,7 @@ const AboutValues = () => {
               <div className="mx-auto mb-4 flex h-[60px] w-[60px] items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
                 {value.icon}
               </div>
-              <h3 className="mb-3 text-xl font-bold text-space-blue">
+              <h3 className="mb-3 text-2xl font-semibold font-syne text-space-blue">
                 {value.title}
               </h3>
               <p className="text-base text-body-color">

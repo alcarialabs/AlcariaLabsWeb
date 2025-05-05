@@ -8,7 +8,7 @@ const AboutTeamConcept = () => {
           <span className="mb-2 block text-base font-medium text-primary">
             Nuestro Equipo
           </span>
-          <h2 className="mb-4 text-3xl font-bold text-space-blue sm:text-4xl">
+          <h2 className="mb-4 text-3xl font-semibold text-space-blue sm:text-4xl font-syne">
             Impulsado por la Experiencia
           </h2>
           <p className="text-lg leading-relaxed text-body-color">

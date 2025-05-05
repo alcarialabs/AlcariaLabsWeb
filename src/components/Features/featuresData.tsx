@@ -3,31 +3,6 @@ import { Feature } from "@/types/feature";
 // Datos refinados con 4 features clave (2 Wallet, 2 IA) y nuevos iconos
 const featuresData: Feature[] = [
   {
-    id: 1,
-    icon: (
-      // Icono: Tarjeta + Móvil (Heroicons: device-phone-mobile + credit-card)
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 20.25z" />
-      </svg>
-    ),
-    title: "Fidelización Directa en Wallet",
-    paragraph:
-      "Crea tarjetas digitales (fidelización, membresía, acceso) para Apple/Google Wallet. Moderniza tu imagen y ofrece comodidad inigualable.",
-  },
-  {
-    id: 2,
-    icon: (
-       // Icono: Campana de Notificación (Heroicons: bell-alert)
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">
-         <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
-       </svg>
-    ),
-    title: "Comunicación que Impacta",
-    paragraph:
-      "Envía notificaciones push personalizadas directo al Wallet. Logra tasas de apertura superiores y aumenta la conversión de tus campañas.",
-  },
-  {
     id: 3,
     icon: (
       // Icono: Engranajes o Configuración (Heroicons: cog-6-tooth)
@@ -51,6 +26,31 @@ const featuresData: Feature[] = [
     title: "Inteligencia para Crecer",
     paragraph:
       "Transforma datos en acción. Usa IA para análisis predictivos, optimización de estrategias y toma de decisiones más rápidas y acertadas.",
+  },
+  {
+    id: 1,
+    icon: (
+      // Icono: Tarjeta + Móvil (Heroicons: device-phone-mobile + credit-card)
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 20.25z" />
+      </svg>
+    ),
+    title: "Fidelización Directa en Wallet",
+    paragraph:
+      "Crea tarjetas digitales (fidelización, membresía, acceso) para Apple/Google Wallet. Moderniza tu imagen y ofrece comodidad inigualable.",
+  },
+  {
+    id: 2,
+    icon: (
+       // Icono: Campana de Notificación (Heroicons: bell-alert)
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+       </svg>
+    ),
+    title: "Comunicación que Impacta",
+    paragraph:
+      "Envía notificaciones push personalizadas directo al Wallet. Logra tasas de apertura superiores y aumenta la conversión de tus campañas.",
   },
 ];
 

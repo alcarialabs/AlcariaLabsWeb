@@ -11,7 +11,7 @@ const AboutCTA = () => {
               <span className="mb-2 text-base font-medium text-primary">
                 ¿Listo para el Siguiente Paso?
               </span>
-              <h2 className="mb-6 text-3xl font-bold leading-tight text-space-blue dark:text-white sm:text-4xl sm:leading-tight md:text-[40px]">
+              <h2 className="mb-6 text-3xl font-semibold font-syne leading-tight text-space-blue dark:text-white sm:text-4xl sm:leading-tight md:text-[40px]">
                 Hablemos sobre cómo ALCARIA puede impulsar tu negocio.
               </h2>
               <p className="mb-9 text-base text-body-color">
@@ -22,7 +22,7 @@ const AboutCTA = () => {
               <div className="flex flex-wrap lg:justify-end">
                 <Link
                   href="/contact"
-                  className="my-1 mr-4 inline-block rounded-xl bg-white px-6 py-4 text-base font-medium text-primary transition hover:bg-opacity-90 lg:px-8 xl:px-10"
+                  className="my-1 mr-4 inline-block rounded-full bg-white px-6 py-4 text-base font-semibold font-syne text-primary transition hover:bg-opacity-90 lg:px-8 xl:px-10"
                 >
                   Contactar Ahora
                 </Link>

@@ -86,7 +86,7 @@ const NewsLatterBox = () => {
         <button
           type="submit"
           disabled={loading}
-          className={`mb-5 flex w-full cursor-pointer items-center justify-center rounded-xl bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`mb-5 flex w-full cursor-pointer items-center justify-center rounded-full bg-primary px-9 py-4 text-base font-semibold font-syne text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
           {loading ? 'Suscribiendo...' : 'Suscribirse'}
         </button>

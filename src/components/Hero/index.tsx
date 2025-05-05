@@ -31,31 +31,34 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 0.2 }}
               >
                 {/* H1 Enfocado en Intriga y Transformación */}
-                El Impulso Inteligente que tu Empresa Merece.
+                Eficiencia hecha a medida.
               </MotionH1>
 
               <MotionP
-                className="max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl"
+                className="w-full text-lg leading-relaxed text-white/90 sm:text-xl text-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                {/* Subtítulo que insinúa beneficios y crea curiosidad */}
-                Simplifica cómo conectas con tus clientes. Potencia radicalmente tu eficiencia operativa. Descubre la solución a medida.
+                {/* Subtítulo en una sola línea */}
+                Una automatización a medida puede transformar tu negocio.
               </MotionP>
 
-              <MotionDiv
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.6 }}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.25}}
+                whileHover={{ scale: 1.04, transition: { duration: 0.25 } }}
+                whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
               >
                 <Link
                   href="#contact"
-                  className="rounded-full bg-white px-6 py-4 text-base font-semibold text-[#0344DC] shadow-md duration-300 hover:bg-gray-100 sm:px-8"
+                  className="rounded-full bg-white px-6 py-4 text-base font-semibold font-extrabold text-[#0344DC] shadow-md duration-300 hover:bg-gray-100 sm:px-8 font-syne"
+                  style={{ minWidth: 180, display: "inline-block" }}
                 >
                   Descubre Cómo
                 </Link>
-              </MotionDiv>
+              </motion.div>
             </MotionDiv>
           </div>
         </div>

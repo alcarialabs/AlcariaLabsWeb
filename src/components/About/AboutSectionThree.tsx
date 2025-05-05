@@ -44,7 +44,7 @@ const AboutSectionWallet = () => {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 pt-1"><DevicePhoneMobileIcon /></div>
                   <div>
-                    <h3 className="mb-2 text-lg font-semibold text-space-blue dark:text-white">Digitalización Inteligente</h3>
+                    <h3 className="mb-2 text-2xl font-semibold text-space-blue dark:text-white font-syne">Digitalización Inteligente</h3>
                     <p className="text-base text-body-color dark:text-body-color-dark">
                       Ofrece tarjetas siempre actualizadas, accesibles y sostenibles. Moderniza tu imagen y facilita la vida a tus clientes.
                     </p>
@@ -55,7 +55,7 @@ const AboutSectionWallet = () => {
                 <div className="flex items-start space-x-4">
                    <div className="flex-shrink-0 pt-1"><BellAlertIcon /></div>
                    <div>
-                    <h3 className="mb-2 text-lg font-semibold text-space-blue dark:text-white">Engagement Potenciado</h3>
+                    <h3 className="mb-2 text-2xl font-semibold text-space-blue dark:text-white font-syne">Engagement Potenciado</h3>
                     <p className="text-base text-body-color dark:text-body-color-dark">
                       Envía notificaciones push relevantes, ofertas personalizadas y fortalece la lealtad de forma medible.
                     </p>
@@ -66,7 +66,7 @@ const AboutSectionWallet = () => {
                 <div className="flex items-start space-x-4">
                    <div className="flex-shrink-0 pt-1"><LinkIcon /></div>
                    <div>
-                     <h3 className="mb-2 text-lg font-semibold text-space-blue dark:text-white">Integración Sencilla</h3>
+                     <h3 className="mb-2 text-2xl font-semibold text-space-blue dark:text-white font-syne">Integración Sencilla</h3>
                      <p className="text-base text-body-color dark:text-body-color-dark">
                        Conecta fácilmente con tus sistemas actuales (CRM, BBDD, etc.) para automatizar y gestionar todo de forma fluida.
                      </p>
@@ -75,7 +75,7 @@ const AboutSectionWallet = () => {
 
                 {/* Botón CTA */}
                 <Link href="/wallet"
-                  className="mt-8 inline-block rounded-lg bg-primary px-6 py-3 text-base font-medium text-white shadow-md transition duration-300 hover:bg-primary/90">
+                  className="mt-8 inline-block rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:bg-primary/90 font-syne">
                   Descubre el Poder de Wallet
                 </Link>
               </div>

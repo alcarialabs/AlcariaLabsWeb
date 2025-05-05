@@ -39,30 +39,22 @@ const Footer = () => {
               {/* Columna 2: Enlaces Útiles */}
               <div className="w-full">
                 <div className="mb-12 lg:mb-16">
-                  <h2 className="mb-10 text-xl font-bold text-space-blue dark:text-white">
+                  <h2 className="mb-10 text-xl font-bold text-space-blue dark:text-white font-syne font-semibold">
                     Enlaces Útiles
                   </h2>
                   <ul>
                     <li>
                       <Link
                         href="/blog"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary font-syne font-semibold"
                       >
                         Blog
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/solutions"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                      >
-                        Soluciones
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
                         href="/about"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary font-syne font-semibold"
                       >
                         Sobre Nosotros
                       </Link>
@@ -74,14 +66,14 @@ const Footer = () => {
               {/* Columna 3: Legal */}
               <div className="w-full">
                 <div className="mb-12 lg:mb-16">
-                  <h2 className="mb-10 text-xl font-bold text-space-blue dark:text-white">
+                  <h2 className="mb-10 text-xl font-bold text-space-blue dark:text-white font-syne font-semibold">
                     Legal
                   </h2>
                   <ul>
                     <li>
                       <Link
                         href="/terms-of-service"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary font-syne font-semibold"
                       >
                         Términos de Servicio
                       </Link>
@@ -89,7 +81,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/privacy-policy"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary font-syne font-semibold"
                       >
                         Política de Privacidad
                       </Link>
@@ -101,14 +93,14 @@ const Footer = () => {
               {/* Columna 4: Soporte */}
               <div className="w-full">
                 <div className="mb-12 lg:mb-16">
-                  <h2 className="mb-10 text-xl font-bold text-space-blue dark:text-white">
+                  <h2 className="mb-10 text-xl font-bold text-space-blue dark:text-white font-syne font-semibold">
                     Soporte
                   </h2>
                   <ul>
                     <li>
                       <Link
                         href="/contact"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary font-syne font-semibold"
                       >
                         Contactar con Soporte
                       </Link>
@@ -116,7 +108,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/about"
-                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary font-syne font-semibold"
                       >
                         Sobre Nosotros
                       </Link>

@@ -78,7 +78,7 @@ const Blog = ({ showAllLink = false, limitPosts }: BlogProps) => {
         {/* Botón "Ver todos los artículos" condicional (solo en Home) */}
         {showAllLink && (
            <div className="mt-12 text-center">
-             <Link href="/blog" className="inline-block rounded-lg bg-primary px-7 py-3 text-center text-base font-medium text-white shadow-md transition duration-300 hover:bg-primary/90">
+             <Link href="/blog" className="inline-block rounded-full bg-primary px-7 py-3 text-center text-base font-semibold font-syne text-white shadow-md transition duration-300 hover:bg-primary/90">
                Ver Todos los Artículos
              </Link>
            </div>
