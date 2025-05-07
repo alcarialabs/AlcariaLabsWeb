@@ -41,7 +41,7 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 0.4 }}
               >
                 {/* Subtítulo en una sola línea */}
-                Una automatización a medida puede transformar tu negocio.
+                Una automatización personalizada puede transformar tu negocio.
               </MotionP>
 
               <motion.div
