@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from 'react';
 import blogData from "@/components/Blog/blogData";
 import AnimatedSection from "@/components/Common/AnimatedSection"; // Opcional para animar la entrada
+import ReactMarkdown from 'react-markdown';
 
 // Temporarily remove static generation functions to bypass build error
 
@@ -55,26 +56,6 @@ const SingleBlogPage = ({ params }) => {
   if (!post) {
     notFound();
   }
-
-  // Placeholder para el contenido completo del artículo
-  const fullContentPlaceholder = (
-    <>
-      <p>{post.paragraph}</p>
-      <br />
-      <p>Este es un contenido de ejemplo extendido para el artículo titulado &quot;{post.title}&quot;. Aquí iría el desarrollo completo de las ideas presentadas en el resumen inicial.</p>
-      <h2>Subtítulo de Ejemplo</h2>
-      <p>Se pueden incluir subtítulos, listas, y otros elementos de formato. Este texto se repite para simular un artículo más largo.</p>
-      <ul>
-        <li>Elemento de lista 1</li>
-        <li>Elemento de lista 2</li>
-      </ul>
-      <p>{post.paragraph}</p> { /* Repetir párrafo */}
-      <blockquote>
-         Esto es una cita destacada o blockquote para enfatizar una idea.
-      </blockquote>
-      <p>Continuación del contenido del blog, explorando más a fondo los beneficios de {post.tags.join(", ")} para las PYMEs.</p>
-    </>
-  );
 
   return (
     <>
@@ -135,7 +116,7 @@ const SingleBlogPage = ({ params }) => {
                          prose-a:text-primary hover:prose-a:underline
                          prose-blockquote:border-l-primary prose-blockquote:pl-4 prose-blockquote:font-medium"
             >
-              {fullContentPlaceholder} { /* Reemplazar con post.content cuando exista */}
+              <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>
 
             {/* Podríamos añadir aquí "Artículos Relacionados" o navegación entre posts */}
