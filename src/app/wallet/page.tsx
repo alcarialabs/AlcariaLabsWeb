@@ -105,11 +105,8 @@ const WalletPage = () => {
                     stroke="currentColor"
                     className="h-8 w-8"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                    />
+                    {/* ChatBubbleBottomCenterTextIcon */}
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-6.75 3h9m-9 3h9M3.375 3h17.25c1.034 0 1.875.841 1.875 1.875v14.25c0 1.034-.841 1.875-1.875 1.875H3.375c-1.034 0-1.875-.841-1.875-1.875V4.875C1.5 3.841 2.341 3 3.375 3z" />
                   </svg>
                 }
                 title="Mayor Engagement"
@@ -125,12 +122,9 @@ const WalletPage = () => {
                     stroke="currentColor"
                     className="h-8 w-8"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 6v12m-3-6h6"
-                    />
-                  </svg> /* Icono Sugerido: CurrencyEuroIcon o similar */
+                    {/* CreditCardIcon */}
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 20.25z" />
+                  </svg> 
                 }
                 title="Ahorro de Costes"
                 text="Elimina gastos de impresión y distribución de tarjetas físicas. Actualizaciones instantáneas y gratuitas."
@@ -145,12 +139,9 @@ const WalletPage = () => {
                     stroke="currentColor"
                     className="h-8 w-8"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 13.5l-1.5-1.5m0 0l1.5-1.5M2.25 12l1.5 1.5m16.5-1.5l1.5 1.5m0 0l-1.5 1.5m1.5-1.5l-1.5-1.5M12 6.75l2.25 2.25m0 0l2.25 2.25M14.25 9l2.25 2.25M12 6.75l-2.25 2.25m0 0l-2.25 2.25M9.75 9l-2.25 2.25M12 12.75l2.25-2.25m0 0l2.25-2.25M14.25 10.5l2.25-2.25M12 12.75l-2.25-2.25m0 0l-2.25-2.25M9.75 10.5l-2.25-2.25m10.5-3l2.25-2.25m0 0l2.25 2.25m-2.25-2.25l-2.25 2.25m-10.5 12l-2.25 2.25m0 0l-2.25-2.25m2.25 2.25l2.25-2.25"
-                    />
-                  </svg> /* Icono Sugerido: SparklesIcon o LeafIcon */
+                    {/* SunIcon */}
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
                 }
                 title="Moderno y Sostenible"
                 text="Ofrece una experiencia digital actual y contribuye a la sostenibilidad eliminando el plástico."
