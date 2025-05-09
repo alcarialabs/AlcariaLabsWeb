@@ -25,84 +25,87 @@ const ChatBubbleLeftRightIcon = ({ className }: { className?: string }) => ( // 
 const AboutSectionTwo = () => {
   return (
     <section>
-      <div className="container">
-        <div className="border-b border-frontier-gray">
-          <div className="-mx-4 flex flex-wrap items-center">
-            {/* Imagen (lado izquierdo) */}
-            <div className="w-full px-4 lg:w-1/2">
-              <div
+     <div className="container">
+       <div className="border-b border-frontier-gray pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+         <div className="-mx-4 flex flex-wrap items-center">
+           {/* Imagen (lado izquierdo) */}
+           <div className="w-full px-4 lg:w-1/2">
+             <div
                className="mx-auto my-8 max-w-[500px] text-center lg:my-0 overflow-hidden rounded-3xl"
                data-wow-delay=".15s"
-              >
-                <Image
-                  src="/images/about/ia23.png"
-                  alt="IA y Automatización en ALCARIA"
-                  width={500}
-                  height={500}
-                  className="drop-shadow-three dark:hidden dark:drop-shadow-none w-full h-auto"
-                />
-                <Image
-                  src="/images/about/ia23.png"
-                  alt="IA y Automatización en ALCARIA"
-                  width={500}
-                  height={500}
-                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none w-full h-auto"
-                />
-              </div>
-            </div>
-            {/* Textos (lado derecho) - Con nuevos iconos SVG */}
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="max-w-[470px] space-y-9"> {/* Añadir space-y para espaciado uniforme */}
-                {/* Punto 1: IA Aplicada */}
-                <div className="flex items-start">
-                  <div className="mr-5 flex-shrink-0 text-primary">
-                    <ChartBarIcon className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
-                      IA Aplicada: Decisiones Inteligentes
-                    </h3>
-                    <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                      Transforma datos en ventaja competitiva. Implementamos IA para análisis predictivo, patrones y optimización de estrategias.
-                    </p>
-                  </div>
-                </div>
+             >
+               <Image
+                 src="/images/about/ia23.webp"
+                 alt="IA y Automatización en ALCARIA"
+                 width={500}
+                 height={500}
+                 className="drop-shadow-three dark:hidden dark:drop-shadow-none w-full h-auto"
+               />
+               <Image
+                 src="/images/about/ia23.webp"
+                 alt="IA y Automatización en ALCARIA"
+                 width={500}
+                 height={500}
+                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none w-full h-auto"
+               />
+             </div>
+           </div>
+   
+           {/* Textos (lado derecho) */}
+           <div className="w-full px-4 lg:w-1/2">
+             <div className="max-w-[470px] space-y-9">
+               {/* Punto 1 */}
+               <div className="flex items-start">
+                 <div className="mr-5 flex-shrink-0 text-primary">
+                   <ChartBarIcon className="h-8 w-8" />
+                 </div>
+                 <div>
+                   <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
+                     IA Aplicada: Decisiones Inteligentes
+                   </h3>
+                   <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                     Transforma datos en ventaja competitiva. Implementamos IA para análisis predictivo, patrones y optimización de estrategias.
+                   </p>
+                 </div>
+               </div>
+   
+               {/* Punto 2 */}
+               <div className="flex items-start">
+                 <div className="mr-5 flex-shrink-0 text-primary">
+                   <BoltIcon className="h-8 w-8" />
+                 </div>
+                 <div>
+                   <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
+                     Automatización que Libera Potencial
+                   </h3>
+                   <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                     Elimina tareas manuales con RPA + IA. Agiliza flujos, reduce costes y permite a tu equipo centrarse en tareas de alto valor.
+                   </p>
+                 </div>
+               </div>
+   
+               {/* Punto 3 */}
+               <div className="flex items-start">
+                 <div className="mr-5 flex-shrink-0 text-primary">
+                   <ChatBubbleLeftRightIcon className="h-8 w-8" />
+                 </div>
+                 <div>
+                   <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
+                     Agentes Inteligentes que Mejoran la Experiencia
+                   </h3>
+                   <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                     Soporte instantáneo y personalizado 24/7. Desarrollamos agentes inteligentes que resuelven consultas, gestionan tareas y mejoran la satisfacción del cliente.
+                   </p>
+                 </div>
+               </div>
+   
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
 
-                {/* Punto 2: Automatización */}
-                <div className="flex items-start">
-                   <div className="mr-5 flex-shrink-0 text-primary">
-                    <BoltIcon className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
-                      Automatización que Libera Potencial
-                    </h3>
-                    <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                      Elimina tareas manuales con RPA + IA. Agiliza flujos, reduce costes y permite a tu equipo centrarse en tareas de alto valor.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Punto 3: Agentes Inteligentes */}
-                 <div className="flex items-start">
-                   <div className="mr-5 flex-shrink-0 text-primary">
-                    <ChatBubbleLeftRightIcon className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-bold text-space-blue dark:text-white sm:text-2xl lg:text-xl xl:text-2xl font-syne">
-                      Agentes Inteligentes que Mejoran la Experiencia
-                    </h3>
-                    <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                      Soporte instantáneo y personalizado 24/7. Desarrollamos agentes inteligentes que resuelven consultas, gestionan tareas y mejoran la satisfacción del cliente.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 };
 
