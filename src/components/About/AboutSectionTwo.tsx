@@ -31,22 +31,25 @@ const AboutSectionTwo = () => {
             {/* Imagen (lado izquierdo) */}
             <div className="w-full px-4 lg:w-1/2">
               <div
-                className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0 overflow-hidden rounded-3xl" // Ya tenías rounded-xl aquí, lo cambio a 3xl por consistencia
-                data-wow-delay=".15s"
-              >
-                <Image
-                  src="/images/about/ia23.png"
-                  alt="IA y Automatización en ALCARIA"
-                  fill
-                  className="drop-shadow-three dark:hidden dark:drop-shadow-none"
-                />
-                <Image
-                  src="/images/about/ia23.png"
-                  alt="IA y Automatización en ALCARIA"
-                  fill
-                  className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
-                />
-              </div>
+               className="relative mx-auto mb-12 max-w-[500px] text-center lg:m-0 overflow-hidden rounded-3xl"
+               data-wow-delay=".15s"
+             >
+               <Image
+                 src="/images/about/ia23.png"
+                 alt="IA y Automatización en ALCARIA"
+                 width={500}
+                 height={500} // Puedes ajustarlo si la imagen tiene una altura diferente
+                 className="drop-shadow-three dark:hidden dark:drop-shadow-none w-full h-auto"
+               />
+               <Image
+                 src="/images/about/ia23.png"
+                 alt="IA y Automatización en ALCARIA"
+                 width={500}
+                 height={500}
+                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none w-full h-auto"
+               />
+             </div>
+
             </div>
             {/* Textos (lado derecho) - Con nuevos iconos SVG */}
             <div className="w-full px-4 lg:w-1/2">
