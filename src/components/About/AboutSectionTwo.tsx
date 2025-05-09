@@ -24,7 +24,7 @@ const ChatBubbleLeftRightIcon = ({ className }: { className?: string }) => ( // 
 
 const AboutSectionTwo = () => {
   return (
-    <section className="pt-16 md:pt-20 lg:pt-28">
+    <section className="md:pt-20 lg:pt-28">
       <div className="container">
         <div className="border-b border-frontier-gray pb-16 md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
