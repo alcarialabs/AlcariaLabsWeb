@@ -35,13 +35,13 @@ const AboutSectionTwo = () => {
                 data-wow-delay=".15s"
               >
                 <Image
-                  src="/images/about/ia23.jpg"
+                  src="/images/about/ia23.png"
                   alt="IA y Automatización en ALCARIA"
                   fill
                   className="drop-shadow-three dark:hidden dark:drop-shadow-none"
                 />
                 <Image
-                  src="/images/about/ia23.jpg"
+                  src="/images/about/ia23.png"
                   alt="IA y Automatización en ALCARIA"
                   fill
                   className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
