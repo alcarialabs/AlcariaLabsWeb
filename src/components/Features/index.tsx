@@ -9,7 +9,7 @@ const Features = () => {
         <div className="border-b border-frontier-gray pb-16 md:pb-20 lg:pb-28">
           <SectionTitle
             title="Cómo lo Hacemos Realidad"
-            paragraph="Combinamos la conexión directa de las Tarjetas Wallet con la eficiencia radical de la IA y la Automatización para transformar tu negocio."
+            paragraph="En ALCARIA, te ayudamos a transformar tu empresa con automatizaciones basadas en Inteligencia Artificial."
             center
           />
           <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-4">
