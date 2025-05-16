@@ -67,13 +67,12 @@ const SingleBlogPage = ({ params }) => {
               {/* Tags */}
               <div className="mb-4">
                 {post.tags.map((tag) => (
-                  <Link
+                  <span
                     key={tag}
-                    href={`/blog/tags/${tag.toLowerCase()}`} // Enlace a futura página de tags
-                    className="inline-block bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2 hover:bg-primary/20 transition-colors duration-200"
+                    className="inline-block bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2"
                   >
                     {tag}
-                  </Link>
+                  </span>
                 ))}
               </div>
               {/* Título */}
