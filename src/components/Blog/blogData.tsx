@@ -10,7 +10,7 @@ const blogData: Blog[] = [
     image: "/images/blog/ia-pymes.jpg", // Imagen Local Placeholder 1
     author: {
       name: "Joan Aparici",
-      designation: "Especialista en IA y Soluciones Wallet",
+      designation: "Co-Fundador · Negocio & Ventas",
       image: "/images/blog/author-joan.jpg",
     },
     tags: ["IA", "PYMEs", "Transformación Digital"],
@@ -49,7 +49,7 @@ En Alcaria, estamos comprometidos con acercar el poder de la Inteligencia Artifi
     image: "/images/blog/wallet-blog.jpg", // Imagen Local Placeholder 2
     author: {
       name: "Vicent Reig",
-      designation: "Especialista en Desarrollo Full-Stack",
+      designation: "Co-Fundador · Ingeniería & Sistemas",
       image: "/images/blog/author-vicent.jpeg",
     },
     tags: ["Wallet", "Marketing Digital", "Experiencia Cliente"],
@@ -97,7 +97,7 @@ Las tarjetas Wallet son mucho más que un reemplazo digital de las tarjetas de f
     image: "/images/blog/blog-03.jpg", // Imagen Local Placeholder 3
     author: {
       name: "Eric Duró",
-      designation: "Especialista en Estrategia Digital",
+      designation: "CEO & Co-Fundador · Tecnología & IA",
       image: "/images/blog/author-eric.jpeg",
     },
     tags: ["Automatización", "RPA", "Eficiencia Operativa"],
@@ -153,7 +153,7 @@ La Automatización Inteligente no es solo para grandes empresas. En Alcaria, est
     image: "/images/blog/blog-01.jpg", // Imagen Local Placeholder 1 (repetida)
     author: {
       name: "Joan Aparici",
-      designation: "Especialista en IA y Soluciones Wallet",
+      designation: "Co-Fundador · Negocio & Ventas",
       image: "/images/blog/author-joan.jpg",
     },
     tags: ["IA", "Estrategia", "PYMEs"],
@@ -225,7 +225,7 @@ Elegir la solución de IA adecuada no tiene por qué ser abrumador. Con una auto
     image: "/images/blog/apple-wallet.jpeg", // Imagen Local Placeholder 2 (repetida)
     author: {
       name: "Vicent Reig",
-      designation: "Especialista en Desarrollo Full-Stack",
+      designation: "Co-Fundador · Ingeniería & Sistemas",
       image: "/images/blog/author-vicent.jpeg",
     },
     tags: ["Wallet", "Tendencias", "Marketing Móvil"],
@@ -295,7 +295,7 @@ El futuro de la interacción con el cliente está en su bolsillo. **Contacta con
     image: "/images/blog/busineess.png", // Imagen sobre automatización
     author: {
       name: "Eric Duró",
-      designation: "Especialista en Estrategia Digital",
+      designation: "CEO & Co-Fundador · Tecnología & IA",
       image: "/images/blog/author-eric.jpeg",
     },
     tags: [
@@ -361,7 +361,7 @@ Las fuerzas de la automatización están convergiendo para crear oportunidades s
     image: "/images/blog/wallet2.jpg", // Imagen sobre Wallet/pagos
     author: {
       name: "Joan Aparici",
-      designation: "Especialista en IA y Soluciones Wallet",
+      designation: "Co-Fundador · Negocio & Ventas",
       image: "/images/blog/author-joan.jpg",
     },
     tags: [
@@ -424,7 +424,7 @@ El futuro de los pagos es digital, más conectado y potencialmente transformado 
     image: "/images/blog/agentes-ia.jpg", // Imagen sobre IA
     author: {
       name: "Vicent Reig",
-      designation: "Especialista en Desarrollo Full-Stack",
+      designation: "Co-Fundador · Ingeniería & Sistemas",
       image: "/images/blog/author-vicent.jpeg",
     },
     tags: [

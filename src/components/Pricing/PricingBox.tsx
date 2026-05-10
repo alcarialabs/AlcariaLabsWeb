@@ -1,79 +1,108 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 const PricingBox = (props: {
   price: string;
   duration: string;
   packageName: string;
   subtitle: string;
   children: React.ReactNode;
+  featured?: boolean;
 }) => {
-  const { price, duration, packageName, subtitle, children } = props;
+  const { price, duration, packageName, subtitle, children, featured } = props;
 
   return (
-    <div className="w-full">
-      <div className="relative z-10 rounded-sm bg-white px-8 py-10 shadow-three hover:shadow-one dark:bg-gray-dark dark:shadow-two dark:hover:shadow-gray-dark">
-        <div className="flex items-center justify-between">
-          <h3 className="price mb-2 text-[32px] font-bold text-black dark:text-white">
-            $<span className="amount">{price}</span>
-            <span className="time text-lg font-medium text-body-color">
-              /{duration}
-            </span>
-          </h3>
-          <h4 className="mb-2 text-xl font-bold text-dark dark:text-white">
-            {packageName}
-          </h4>
-        </div>
-        <p className="mb-7 text-base text-body-color">{subtitle}</p>
-        <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
-          <button className="flex w-full items-center justify-center rounded-sm bg-primary p-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
-            Start Free Trial
-          </button>
-        </div>
-        <div>{children}</div>
-        <div className="absolute bottom-0 right-0 z-[-1]">
-          <svg
-            width="179"
-            height="158"
-            viewBox="0 0 179 158"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <motion.div
+      className="w-full"
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.25 }}
+    >
+      <div
+        className={`relative overflow-hidden rounded-2xl p-8 shadow-sm transition-all duration-300 ${
+          featured
+            ? "bg-[#01203F] text-white shadow-2xl shadow-[#01203F]/25 ring-2 ring-[#FF4F00]"
+            : "bg-white ring-1 ring-gray-100 hover:shadow-lg hover:ring-[#0344DC]/20 dark:bg-gray-dark dark:ring-white/10"
+        }`}
+      >
+        {/* Featured badge */}
+        {featured && (
+          <div className="absolute right-6 top-6 rounded-full bg-[#FF4F00] px-3 py-1 text-xs font-bold text-white">
+            Más Popular
+          </div>
+        )}
+
+        {/* Top gradient accent */}
+        <div
+          className={`mb-8 h-1 w-12 rounded-full ${
+            featured
+              ? "bg-gradient-to-r from-[#FF4F00] to-[#E3CC9C]"
+              : "bg-gradient-to-r from-[#0344DC] to-[#FF4F00]"
+          }`}
+        />
+
+        {/* Package name */}
+        <h4
+          className={`font-syne mb-3 text-sm font-bold uppercase tracking-[0.12em] ${
+            featured ? "text-[#E3CC9C]" : "text-[#0344DC]"
+          }`}
+        >
+          {packageName}
+        </h4>
+
+        {/* Price */}
+        <div className="mb-3 flex items-end gap-1">
+          <span
+            className={`font-syne text-5xl font-bold ${
+              featured ? "text-white" : "text-[#01203F] dark:text-white"
+            }`}
           >
-            <path
-              opacity="0.5"
-              d="M75.0002 63.256C115.229 82.3657 136.011 137.496 141.374 162.673C150.063 203.47 207.217 197.755 202.419 167.738C195.393 123.781 137.273 90.3579 75.0002 63.256Z"
-              fill="url(#paint0_linear_70:153)"
-            />
-            <path
-              opacity="0.3"
-              d="M178.255 0.150879C129.388 56.5969 134.648 155.224 143.387 197.482C157.547 265.958 65.9705 295.709 53.1024 246.401C34.2588 174.197 100.939 83.7223 178.255 0.150879Z"
-              fill="url(#paint1_linear_70:153)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_70:153"
-                x1="69.6694"
-                y1="29.9033"
-                x2="196.108"
-                y2="83.2919"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_70:153"
-                x1="165.348"
-                y1="-75.4466"
-                x2="-3.75136"
-                y2="103.645"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
+            {price}€
+          </span>
+          <span
+            className={`mb-2 text-sm font-medium ${
+              featured ? "text-white/60" : "text-body-color"
+            }`}
+          >
+            /{duration === "mo" ? "mes" : "año"}
+          </span>
         </div>
+
+        <p
+          className={`mb-8 text-sm leading-relaxed ${
+            featured ? "text-white/70" : "text-body-color"
+          }`}
+        >
+          {subtitle}
+        </p>
+
+        {/* CTA */}
+        <Link
+          href="#contact"
+          className={`font-syne mb-8 flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold transition-all duration-300 ${
+            featured
+              ? "bg-[#FF4F00] text-white shadow-lg shadow-[#FF4F00]/30 hover:bg-[#FF4F00]/90"
+              : "bg-[#01203F] text-white hover:bg-[#0344DC]"
+          }`}
+        >
+          Empezar Ahora
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </Link>
+
+        {/* Divider */}
+        <div
+          className={`mb-6 h-px ${
+            featured ? "bg-white/10" : "bg-gray-100 dark:bg-white/10"
+          }`}
+        />
+
+        {/* Features list */}
+        <div>{children}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

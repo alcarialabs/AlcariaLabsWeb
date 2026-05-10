@@ -1,5 +1,7 @@
 "use client";
+
 import { useState } from "react";
+import { motion } from "framer-motion";
 import SectionTitle from "../Common/SectionTitle";
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
@@ -8,151 +10,130 @@ const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
 
   return (
-    <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
-      <div className="container">
+    <section id="pricing" className="relative z-10 overflow-hidden py-16 md:py-20 lg:py-28">
+      {/* Subtle background gradient */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-[#E3CC9C]/5 to-white dark:from-gray-dark dark:via-[#E3CC9C]/3 dark:to-gray-dark" />
+
+      <div className="container relative z-10">
         <SectionTitle
           title="Planes de Servicio ALCARIA"
-          paragraph="Elige el plan que mejor se adapte a las necesidades de tu empresa. Nuestros planes flexibles están diseñados para transformar y automatizar tus procesos operativos de forma sencilla y eficiente."
+          paragraph="Elige el plan que mejor se adapte a tu empresa. Soluciones flexibles para transformar y automatizar tus procesos sin complicaciones."
           center
           width="665px"
         />
 
-        <div className="w-full">
-          <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
-            <span
-              onClick={() => setIsMonthly(true)}
-              className={`${
-                isMonthly
-                  ? "pointer-events-none text-primary"
-                  : "text-dark dark:text-white"
-              } mr-4 cursor-pointer text-base font-semibold`}
-            >
-              Mensual
+        {/* Toggle */}
+        <div className="mb-12 flex items-center justify-center gap-5">
+          <button
+            onClick={() => setIsMonthly(true)}
+            className={`font-syne text-sm font-bold transition-colors duration-200 ${
+              isMonthly ? "text-[#01203F] dark:text-white" : "text-body-color"
+            }`}
+          >
+            Mensual
+          </button>
+          <button
+            onClick={() => setIsMonthly(!isMonthly)}
+            className="relative flex h-7 w-14 items-center rounded-full bg-[#01203F] p-1 transition-colors duration-300 dark:bg-[#0344DC]"
+          >
+            <motion.div
+              className="h-5 w-5 rounded-full bg-white shadow-md"
+              animate={{ x: isMonthly ? 0 : 28 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            />
+          </button>
+          <button
+            onClick={() => setIsMonthly(false)}
+            className={`font-syne text-sm font-bold transition-colors duration-200 ${
+              !isMonthly ? "text-[#01203F] dark:text-white" : "text-body-color"
+            }`}
+          >
+            Anual
+            <span className="ml-2 rounded-full bg-[#FF4F00]/15 px-2 py-0.5 text-xs font-bold text-[#FF4F00]">
+              -15%
             </span>
-            <div
-              onClick={() => setIsMonthly(!isMonthly)}
-              className="flex cursor-pointer items-center"
-            >
-              <div className="relative">
-                <div className="h-5 w-14 rounded-full bg-[#1D2144] shadow-inner"></div>
-                <div
-                  className={`${
-                    isMonthly ? "" : "translate-x-full"
-                  } shadow-switch-1 absolute left-0 top-[-4px] flex h-7 w-7 items-center justify-center rounded-full bg-primary transition`}
-                >
-                  <span className="active h-4 w-4 rounded-full bg-white"></span>
-                </div>
-              </div>
-            </div>
-            <span
-              onClick={() => setIsMonthly(false)}
-              className={`${
-                isMonthly
-                  ? "text-dark dark:text-white"
-                  : "pointer-events-none text-primary"
-              } ml-4 cursor-pointer text-base font-semibold`}
-            >
-              Anual
-            </span>
-          </div>
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <PricingBox
-            packageName="Básico"
-            price={isMonthly ? "99" : "999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Ideal para pequeñas empresas que inician su transformación digital."
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
           >
-            <OfferList text="Diagnóstico inicial de procesos" status="active" />
-            <OfferList text="Chatbot básico de atención" status="active" />
-            <OfferList text="Acceso a plataforma de automatización" status="active" />
-            <OfferList text="Soporte por email" status="active" />
-            <OfferList text="Actualizaciones periódicas" status="inactive" />
-            <OfferList text="Capacitación personalizada" status="inactive" />
-          </PricingBox>
-          <PricingBox
-            packageName="Profesional"
-            price={isMonthly ? "199" : "1999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Para empresas en crecimiento que requieren soluciones avanzadas."
-          >
-            <OfferList text="Todo en el plan Básico" status="active" />
-            <OfferList text="Integración de IA avanzada" status="active" />
-            <OfferList text="Optimización de procesos operativos" status="active" />
-            <OfferList text="Soporte telefónico" status="active" />
-            <OfferList text="Actualizaciones y mejoras continuas" status="active" />
-            <OfferList text="Capacitación especializada" status="inactive" />
-          </PricingBox>
-          <PricingBox
-            packageName="Empresarial"
-            price={isMonthly ? "299" : "2999"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="La solución integral para grandes empresas con necesidades complejas."
-          >
-            <OfferList text="Todo en el plan Profesional" status="active" />
-            <OfferList text="Consultoría estratégica personalizada" status="active" />
-            <OfferList text="Soporte 24/7" status="active" />
-            <OfferList text="Implementación integral de automatización" status="active" />
-            <OfferList text="Actualizaciones premium" status="active" />
-            <OfferList text="Capacitación y formación continua" status="active" />
-          </PricingBox>
-        </div>
-      </div>
+            <PricingBox
+              packageName="Básico"
+              price={isMonthly ? "99" : "84"}
+              duration={isMonthly ? "mo" : "yr"}
+              subtitle="Ideal para pequeñas empresas que inician su transformación digital."
+            >
+              <OfferList text="Diagnóstico inicial de procesos" status="active" />
+              <OfferList text="Chatbot básico de atención" status="active" />
+              <OfferList text="Acceso a plataforma de automatización" status="active" />
+              <OfferList text="Soporte por email" status="active" />
+              <OfferList text="Actualizaciones periódicas" status="inactive" />
+              <OfferList text="Capacitación personalizada" status="inactive" />
+            </PricingBox>
+          </motion.div>
 
-      <div className="absolute bottom-0 left-0 z-[-1]">
-        <svg
-          width="239"
-          height="601"
-          viewBox="0 0 239 601"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <PricingBox
+              packageName="Profesional"
+              price={isMonthly ? "199" : "169"}
+              duration={isMonthly ? "mo" : "yr"}
+              subtitle="Para empresas en crecimiento que requieren soluciones avanzadas de IA."
+              featured
+            >
+              <OfferList text="Todo en el plan Básico" status="active" featured />
+              <OfferList text="Integración de IA avanzada" status="active" featured />
+              <OfferList text="Optimización de procesos operativos" status="active" featured />
+              <OfferList text="Soporte telefónico prioritario" status="active" featured />
+              <OfferList text="Actualizaciones y mejoras continuas" status="active" featured />
+              <OfferList text="Capacitación especializada" status="inactive" featured />
+            </PricingBox>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <PricingBox
+              packageName="Empresarial"
+              price={isMonthly ? "299" : "254"}
+              duration={isMonthly ? "mo" : "yr"}
+              subtitle="La solución integral para empresas con necesidades complejas y alto volumen."
+            >
+              <OfferList text="Todo en el plan Profesional" status="active" />
+              <OfferList text="Consultoría estratégica personalizada" status="active" />
+              <OfferList text="Soporte 24/7 dedicado" status="active" />
+              <OfferList text="Implementación integral de automatización" status="active" />
+              <OfferList text="Actualizaciones premium" status="active" />
+              <OfferList text="Capacitación y formación continua" status="active" />
+            </PricingBox>
+          </motion.div>
+        </div>
+
+        {/* Trust note */}
+        <motion.p
+          className="mt-10 text-center text-sm text-body-color"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <rect
-            opacity="0.3"
-            x="-184.451"
-            y="600.973"
-            width="196"
-            height="541.607"
-            rx="2"
-            transform="rotate(-128.7 -184.451 600.973)"
-            fill="url(#paint0_linear_93:235)"
-          />
-          <rect
-            opacity="0.3"
-            x="-188.201"
-            y="385.272"
-            width="59.7544"
-            height="541.607"
-            rx="2"
-            transform="rotate(-128.7 -188.201 385.272)"
-            fill="url(#paint1_linear_93:235)"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear_93:235"
-              x1="-90.1184"
-              y1="420.414"
-              x2="-90.1184"
-              y2="1131.65"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#4A6CF7" />
-              <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient
-              id="paint1_linear_93:235"
-              x1="-159.441"
-              y1="204.714"
-              x2="-159.441"
-              y2="915.952"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#4A6CF7" />
-              <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
+          Sin permanencia. Sin comisiones ocultas.{" "}
+          <a href="#contact" className="font-semibold text-[#0344DC] hover:underline">
+            ¿Necesitas un plan personalizado?
+          </a>
+        </motion.p>
       </div>
     </section>
   );

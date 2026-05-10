@@ -3,85 +3,73 @@ import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
 import Link from "next/link";
 
-// Definir tipo para las props
 interface BlogProps {
   showAllLink?: boolean;
   limitPosts?: number;
 }
 
 const Blog = ({ showAllLink = false, limitPosts }: BlogProps) => {
-  // Determinar qué datos mostrar
   const postsToShow = limitPosts ? blogData.slice(0, limitPosts) : blogData;
-  const showPagination = !limitPosts && blogData.length > 0; // Mostrar paginación solo si no hay límite
+  const showPagination = !limitPosts && blogData.length > 0;
 
   return (
     <section
       id="blog"
-      className="bg-gray-light dark:bg-gray-dark py-16 md:py-20 lg:py-28"
+      className="relative overflow-hidden bg-gray-50 py-16 dark:bg-gray-dark md:py-20 lg:py-28"
     >
+      {/* Subtle top border accent */}
+      <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E3CC9C]/40 to-transparent" />
+
       <div className="container">
         <SectionTitle
-          title={limitPosts ? "Últimos Artículos" : "Todos los Artículos"} // Título dinámico
-          paragraph="Lee nuestros análisis y consejos prácticos sobre IA, Wallet y automatización para llevar tu empresa al siguiente nivel."
+          title={limitPosts ? "Últimos Artículos" : "Todos los Artículos"}
+          paragraph="Análisis y consejos prácticos sobre IA, Wallet y automatización para llevar tu empresa al siguiente nivel."
           center
           mb="60px"
         />
 
-        {/* Grid con los posts a mostrar */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
           {postsToShow.map((blog) => (
-            <div key={blog.id} className="wow fadeInUp" data-wow-delay=".1s">
+            <div key={blog.id}>
               <SingleBlog blog={blog} />
             </div>
           ))}
         </div>
 
-        {/* Paginación (Solo si no hay límite) */}
         {showPagination && (
-            <div className="mt-12 -mx-4 flex flex-wrap" data-wow-delay=".15s">
-             <div className="w-full px-4">
-               <ul className="flex items-center justify-center pt-8">
-                 {/* Botón Prev (ejemplo básico, sin lógica real de cambio de pág) */}
-                 <li className="mx-1">
-                   <a
-                     href="#0"
-                     className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                   >
-                     Prev
-                   </a>
-                 </li>
-                 {/* Números de página (ejemplo básico) */}
-                 <li className="mx-1">
-                   <a
-                     href="#0"
-                     className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-primary px-4 text-sm text-white transition hover:bg-opacity-100 hover:text-white"
-                   >
-                     1
-                   </a>
-                 </li>
-                 {/* Mostrar más números si hubiera lógica de paginación real */}
-                 {/* ... */}
-                 {/* Botón Next (ejemplo básico) */}
-                 <li className="mx-1">
-                   <a
-                     href="#0"
-                     className="flex h-9 min-w-[36px] items-center justify-center rounded-md bg-body-color bg-opacity-[15%] px-4 text-sm text-body-color transition hover:bg-primary hover:bg-opacity-100 hover:text-white"
-                   >
-                     Next
-                   </a>
-                 </li>
-               </ul>
-             </div>
-           </div>
+          <div className="mt-12 flex justify-center">
+            <ul className="flex items-center gap-2">
+              <li>
+                <span className="flex h-10 min-w-[40px] cursor-default items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-body-color/40 shadow-sm dark:bg-gray-dark">
+                  Anterior
+                </span>
+              </li>
+              <li>
+                <span className="flex h-10 min-w-[40px] items-center justify-center rounded-full bg-[#01203F] px-4 text-sm font-bold text-white">
+                  1
+                </span>
+              </li>
+              <li>
+                <span className="flex h-10 min-w-[40px] cursor-default items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-body-color/40 shadow-sm dark:bg-gray-dark">
+                  Siguiente
+                </span>
+              </li>
+            </ul>
+          </div>
         )}
 
-        {/* Botón "Ver todos los artículos" condicional (solo en Home) */}
         {showAllLink && (
-           <div className="mt-12 text-center">
-             <Link href="/blog" className="inline-block rounded-full bg-primary px-7 py-3 text-center text-base font-semibold font-syne text-white shadow-md transition duration-300 hover:bg-primary/90">
-               Ver Todos los Artículos
-             </Link>
-           </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/blog"
+              className="font-syne inline-flex items-center gap-2 rounded-full border-2 border-[#01203F] px-7 py-3 text-base font-bold text-[#01203F] transition-all duration-300 hover:bg-[#01203F] hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[#01203F]"
+            >
+              Ver Todos los Artículos
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
         )}
       </div>
     </section>

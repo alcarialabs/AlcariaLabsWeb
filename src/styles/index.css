@@ -5,20 +5,14 @@
 @tailwind utilities;
 
 @layer base {
-  /* Eliminar las reglas de font-family y font-weight para body */
-  /* ... existing code ... */
-  /* Eliminar las reglas de font-family y font-weight para h1-h6 */
-  /* ... existing code ... */
-  /* Eliminar las reglas de font-family, font-weight y font-style para em, .resaltado */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {
     @apply inline-flex;
-  }
-
-  .sticky .header-logo {
-    @apply py-5 lg:py-2;
   }
 
   .sticky .menu-scroll.active {
@@ -32,4 +26,55 @@
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
+}
+
+@layer utilities {
+  .bg-gradient-alcaria {
+    background: linear-gradient(135deg, #01203F 0%, #0344DC 100%);
+  }
+
+  .text-gradient-alcaria {
+    background: linear-gradient(135deg, #FF4F00, #E3CC9C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #0344DC, #01203F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01203F;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0344DC;
+}
+
+/* Selection */
+::selection {
+  background: #0344DC;
+  color: white;
+}
+
+/* Smooth focus rings */
+*:focus-visible {
+  outline: 2px solid #0344DC;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

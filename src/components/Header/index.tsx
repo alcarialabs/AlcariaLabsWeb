@@ -3,16 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import menuData from "./menuData";
 
 const Header = () => {
-  // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
 
-  // Sticky Navbar
   const [sticky, setSticky] = useState(false);
   const handleStickyNavbar = () => {
     if (window.scrollY >= 80) {
@@ -28,7 +27,6 @@ const Header = () => {
     };
   }, []);
 
-  // Submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
   const handleSubmenu = (index) => {
     if (openIndex === index) {
@@ -39,42 +37,46 @@ const Header = () => {
   };
 
   const usePathName = usePathname();
-  const isHomePage = usePathName === "/"; // Determinar si es la página principal
+  const isHomePage = usePathName === "/";
+
+  const isTransparent = isHomePage && !sticky;
 
   return (
     <>
       <header
-        className={`header left-0 top-0 z-40 flex w-full items-center ${
-          !isHomePage || sticky
-            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
+        className={`header left-0 top-0 z-40 flex h-[72px] w-full items-center transition-all duration-300 ${
+          !isTransparent
+            ? "fixed z-[9999] bg-white/95 shadow-sm shadow-black/5 backdrop-blur-md dark:bg-gray-dark/95"
             : "absolute bg-transparent"
         }`}
       >
-        <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
-              <Link
-                href="/"
-                className={`header-logo block w-full py-5 lg:py-2`}
-              >
-                <Image
-                  src="/images/logo/LOGO_ALCARIA_AZUL.png"
-                  alt="ALCARIA logo"
-                  width={140}
-                  height={30}
-                  className={`w-full ${!isHomePage || sticky ? "block" : "hidden"}`}
-                />
-                <Image
-                  src="/images/logo/LOGO_ALCARIA_BLANCO.png"
-                  alt="ALCARIA logo"
-                  width={140}
-                  height={30}
-                  className={`w-full ${isHomePage && !sticky ? "block" : "hidden"}`}
-                />
+        <div className="container h-full">
+          <div className="relative -mx-4 flex h-full items-center justify-between">
+            {/* Logo */}
+            <div className="flex h-full items-center w-60 max-w-full px-4 xl:mr-12">
+              <Link href="/" className="header-logo flex h-full w-full items-center">
+                <div className="relative h-[30px] w-[140px]">
+                  <Image
+                    src="/images/logo/LOGO_ALCARIA_AZUL.png"
+                    alt="ALCARIA logo"
+                    width={140}
+                    height={30}
+                    className={`absolute inset-0 w-full transition-opacity duration-300 ${!isTransparent ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                  />
+                  <Image
+                    src="/images/logo/LOGO_ALCARIA_BLANCO.png"
+                    alt="ALCARIA logo"
+                    fill
+                    sizes="140px"
+                    className={`object-cover object-center transition-opacity duration-300 ${isTransparent ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                  />
+                </div>
               </Link>
             </div>
-            <div className="flex w-full items-center justify-between px-4">
-              <div>
+
+            <div className="flex h-full w-full items-center justify-between px-4">
+              <div className="lg:flex lg:h-full lg:items-center">
+                {/* Mobile hamburger */}
                 <button
                   onClick={navbarToggleHandler}
                   id="navbarToggler"
@@ -82,41 +84,43 @@ const Header = () => {
                   className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
                 >
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${!isHomePage || sticky ? "bg-black" : "bg-white"} ${
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${!isTransparent ? "bg-[#01203F]" : "bg-white"} ${
                       navbarOpen ? "top-[7px] rotate-45" : ""
                     }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${!isHomePage || sticky ? "bg-black" : "bg-white"} ${
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${!isTransparent ? "bg-[#01203F]" : "bg-white"} ${
                       navbarOpen ? "opacity-0" : ""
                     }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${!isHomePage || sticky ? "bg-black" : "bg-white"} ${
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${!isTransparent ? "bg-[#01203F]" : "bg-white"} ${
                       navbarOpen ? "top-[-8px] -rotate-45" : ""
                     }`}
                   />
                 </button>
+
+                {/* Nav links */}
                 <nav
                   id="navbarCollapse"
                   className={`navbar absolute right-0 z-30 w-[250px] duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:p-0 lg:opacity-100 ${
                     navbarOpen
-                      ? "visibility top-full opacity-100 rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 shadow-lg dark:border-body-color/20 dark:bg-dark"
+                      ? "visibility top-full opacity-100 rounded-xl border border-gray-100 bg-white px-6 py-4 shadow-xl dark:border-white/10 dark:bg-dark"
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
+                  <ul className="block lg:flex lg:items-center lg:space-x-8">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
                           <Link
                             href={menuItem.path}
-                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 font-syne font-semibold ${
-                              navbarOpen ? 'text-dark dark:text-white' : ''
+                            className={`font-syne flex py-2 text-sm font-semibold transition-colors duration-200 lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 ${
+                              navbarOpen ? "text-[#01203F] dark:text-white" : ""
                             } ${
-                              isHomePage
-                                ? (sticky ? 'lg:text-dark lg:dark:text-white lg:hover:text-primary' : 'lg:text-white lg:hover:text-white lg:dark:text-white lg:group-hover:opacity-70')
-                                : 'lg:text-dark lg:dark:text-white lg:hover:text-primary'
+                              isTransparent
+                                ? "lg:text-white/80 lg:hover:text-white"
+                                : "lg:text-[#01203F] lg:hover:text-[#0344DC] dark:lg:text-white"
                             }`}
                             onClick={() => setNavbarOpen(false)}
                           >
@@ -126,25 +130,17 @@ const Header = () => {
                           <>
                             <p
                               onClick={() => handleSubmenu(index)}
-                              className={`flex cursor-pointer items-center justify-between py-2 text-base group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                                navbarOpen ? 'text-dark dark:text-white' : ''
+                              className={`font-syne flex cursor-pointer items-center justify-between py-2 text-sm font-semibold lg:mr-0 lg:inline-flex lg:px-0 lg:py-4 ${
+                                navbarOpen ? "text-[#01203F] dark:text-white" : ""
                               } ${
-                                isHomePage
-                                  ? (sticky ? 'lg:text-dark lg:dark:text-white' : 'lg:text-white/70 lg:group-hover:text-white lg:dark:text-white')
-                                  : 'lg:text-dark lg:dark:text-white'
+                                isTransparent
+                                  ? "lg:text-white/80 lg:hover:text-white"
+                                  : "lg:text-[#01203F] lg:hover:text-[#0344DC] dark:lg:text-white"
                               }`}
                             >
                               {menuItem.title}
-                              <span
-                                className={`pl-3 ${
-                                  navbarOpen ? 'text-dark dark:text-white' : ''
-                                } ${
-                                  isHomePage
-                                    ? (sticky ? 'lg:text-dark lg:dark:text-white' : 'lg:text-white/70 lg:dark:text-white')
-                                    : 'lg:text-dark lg:dark:text-white'
-                                }`}
-                              >
-                                <svg width="25" height="24" viewBox="0 0 25 24">
+                              <span className="pl-2">
+                                <svg width="20" height="20" viewBox="0 0 25 24">
                                   <path
                                     fillRule="evenodd"
                                     clipRule="evenodd"
@@ -155,7 +151,7 @@ const Header = () => {
                               </span>
                             </p>
                             <div
-                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
+                              className={`submenu relative left-0 top-full rounded-xl bg-white shadow-menu transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:group-hover:visible lg:group-hover:top-full ${
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
@@ -163,7 +159,7 @@ const Header = () => {
                                 <Link
                                   href={submenuItem.path}
                                   key={index}
-                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white dark:hover:text-primary lg:px-3"
+                                  className="block rounded-lg px-3 py-2.5 text-sm text-[#01203F] hover:bg-gray-50 hover:text-[#0344DC] dark:text-white dark:hover:bg-white/5"
                                   onClick={() => setNavbarOpen(false)}
                                 >
                                   {submenuItem.title}
@@ -176,6 +172,29 @@ const Header = () => {
                     ))}
                   </ul>
                 </nav>
+              </div>
+
+              {/* CTA Button */}
+              <div className="hidden lg:flex lg:items-center lg:gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <Link
+                    href="/contact"
+                    className={`font-syne inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-300 ${
+                      isTransparent
+                        ? "border border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+                        : "bg-[#FF4F00] text-white shadow-md shadow-[#FF4F00]/20 hover:bg-[#FF4F00]/90"
+                    }`}
+                  >
+                    Demo Gratis
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </div>
