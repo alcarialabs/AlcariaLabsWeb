@@ -30,7 +30,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% is visible, only once
+      viewport={{ once: true, amount: 0 }}
       variants={sectionVariants}
       transition={{ delay }} // Apply optional delay
       className={className}

@@ -127,7 +127,7 @@ const AboutIntroStory = () => {
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-6 border-t border-gray-100 pt-8 dark:border-white/10">
                 {[
-                  { value: "2022", label: "Fundada" },
+                  { value: "2025", label: "Fundada" },
                   { value: "+20", label: "Clientes activos" },
                   { value: "100%", label: "A medida" },
                 ].map((stat, i) => (
