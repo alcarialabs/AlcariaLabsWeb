@@ -1,85 +1,80 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionThree from "@/components/About/AboutSectionThree";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import Blog from "@/components/Blog";
-import ScrollUp from "@/components/Common/ScrollUp";
-import Contact from "@/components/Contact";
-import CTA from "@/components/CTA";
-import Features from "@/components/Features";
-import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
-import { Metadata } from "next";
-import AnimatedSection from "@/components/Common/AnimatedSection";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Hero from "@/components/home/Hero";
+import Integrations from "@/components/home/Integrations";
+import Manifesto from "@/components/home/Manifesto";
+import ServicesScroller from "@/components/home/ServicesScroller";
+import AgentDemo from "@/components/home/AgentDemo";
+import Process from "@/components/home/Process";
+import Testimonials from "@/components/home/Testimonials";
+import Faq from "@/components/sections/Faq";
+import ContactSection from "@/components/sections/ContactSection";
+import PostCard from "@/components/blog/PostCard";
+import SplitReveal from "@/components/motion/SplitReveal";
+import Reveal from "@/components/motion/Reveal";
+import Arrow from "@/components/ui/Arrow";
+import JsonLd from "@/components/seo/JsonLd";
+import { POSTS } from "@/content/blog";
+import { HOME_FAQ, SERVICES } from "@/lib/services";
+import { SITE } from "@/lib/site";
+import { faqPage, graph, serviceNode, webPage } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "ALCARIA – Automatización e IA para Empresas y PYMEs",
-  description:
-    "ALCARIA automatiza procesos con IA y agentes inteligentes para empresas y PYMEs. Reduce costes, elimina tareas repetitivas y multiplica la productividad. Consulta gratuita.",
-  keywords:
-    "automatización empresas, inteligencia artificial PYMEs, agentes IA, tarjetas wallet, transformación digital, ALCARIA",
-  openGraph: {
-    title: "ALCARIA – Automatización e IA para Empresas",
-    description:
-      "Automatizamos procesos con IA, eliminamos tareas repetitivas y multiplicamos la productividad. Resultados reales en semanas.",
-    url: "https://alcaria.es",
-    siteName: "ALCARIA",
-    type: "website",
-  },
-  alternates: { canonical: "https://alcaria.es" },
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "ALCARIA",
-  url: "https://alcaria.es",
-  logo: "https://alcaria.es/images/logo/LOGO_ALCARIA_AZUL.png",
-  description:
-    "ALCARIA automatiza procesos con IA y agentes inteligentes para empresas y PYMEs. Tarjetas Wallet, automatización de procesos y soluciones de IA personalizadas.",
-  foundingDate: "2025",
-  founders: [
-    { "@type": "Person", name: "Eric Duró", url: "https://ericduro.com" },
-    { "@type": "Person", name: "Joan Aparici" },
-    { "@type": "Person", name: "Vicent Reig" },
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer service",
-    email: "hola@alcaria.es",
-    availableLanguage: ["Spanish"],
-  },
-  sameAs: ["https://ericduro.com"],
+  title: { absolute: `${SITE.name} | Automatización con IA, Agentes y Wallet para PYMEs` },
+  description: SITE.description,
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
+  const latest = POSTS.slice(0, 3);
+
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+    <main>
+      <JsonLd
+        data={graph(
+          webPage({ path: "/", name: `${SITE.name}: ${SITE.tagline}`, description: SITE.description }),
+          ...SERVICES.map(serviceNode),
+          faqPage(HOME_FAQ, SITE.url),
+        )}
       />
-      <ScrollUp />
       <Hero />
-      <AnimatedSection>
-        <Features />
-      </AnimatedSection>
-      <AnimatedSection>
-        <AboutSectionTwo />
-      </AnimatedSection>
-      <AnimatedSection>
-        <AboutSectionThree />
-      </AnimatedSection>
-      <AnimatedSection>
-        <Testimonials />
-      </AnimatedSection>
-      <CTA />
-      <AnimatedSection>
-        <Blog limitPosts={3} showAllLink={true} />
-      </AnimatedSection>
-      <AnimatedSection>
-        <Contact />
-      </AnimatedSection>
-    </>
+      <Integrations />
+      <Manifesto />
+      <ServicesScroller />
+      <AgentDemo />
+      <Process />
+      <Testimonials />
+      <Faq
+        items={HOME_FAQ}
+        title="Preguntas frecuentes"
+        intro="Plazos, costes, integraciones y seguridad: lo que conviene saber antes de empezar."
+      />
+
+      {/* Latest guides */}
+      <section aria-labelledby="blog-title" className="relative bg-night py-24 md:py-36">
+        <div className="container">
+          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow mb-5">Blog</p>
+              <SplitReveal as="h2" id="blog-title" className="max-w-[16ch] font-display text-display-md font-extrabold text-white">
+                Guías prácticas de IA para empresas
+              </SplitReveal>
+            </div>
+            <Link href="/blog" className="btn-ghost self-start md:self-auto">
+              Ver todas las guías <Arrow />
+            </Link>
+          </div>
+          <Reveal className="grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3" stagger={0.12}>
+            {latest.map((p) => (
+              <div key={p.slug} data-reveal>
+                <PostCard post={p} />
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <ContactSection />
+    </main>
   );
 }

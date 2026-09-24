@@ -1,151 +1,82 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
+import Link from "next/link";
+import { useState } from "react";
+import { CONSENT_CATEGORIES, useCookieConsent } from "@/context/CookieConsentContext";
 
-// Define consent categories
-export const CONSENT_CATEGORIES = {
-  NECESSARY: 'necessary',
-  ANALYTICS: 'analytics',
-  MARKETING: 'marketing',
-};
+/** Floating consent card. Same cookie name/format as before, now wired to the context live. */
+export default function CookieConsentBanner() {
+  const { decided, updateConsent } = useCookieConsent();
+  const [custom, setCustom] = useState(false);
+  const [prefs, setPrefs] = useState({ analytics: false, marketing: false });
 
-// Default consent state (Necessary is always true)
-const defaultConsent = {
-  [CONSENT_CATEGORIES.NECESSARY]: true,
-  [CONSENT_CATEGORIES.ANALYTICS]: false,
-  [CONSENT_CATEGORIES.MARKETING]: false,
-};
+  if (decided !== false) return null;
 
-const COOKIE_NAME = "AlcariaCookieConsentPreferences";
-
-const CookieConsentBanner = () => {
-  const [consent, setConsent] = useState(defaultConsent);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-    const savedConsent = Cookies.get(COOKIE_NAME);
-    if (savedConsent) {
-      try {
-        setConsent(JSON.parse(savedConsent));
-      } catch (e) {
-        console.error("Error parsing cookie consent:", e);
-        // Fallback to default if parsing fails
-        setConsent(defaultConsent);
-      }
-    } else {
-       setConsent(defaultConsent); // Ensure default is set if no cookie
-    }
-  }, []);
-
-  const handleAccept = () => {
-    // Accept all categories when general accept is clicked
-    const acceptedConsent = {
-      [CONSENT_CATEGORIES.NECESSARY]: true,
-      [CONSENT_CATEGORIES.ANALYTICS]: true,
-      [CONSENT_CATEGORIES.MARKETING]: true,
-    };
-    Cookies.set(COOKIE_NAME, JSON.stringify(acceptedConsent), { expires: 150 });
-    setConsent(acceptedConsent);
-    // Optionally reload or trigger updates if needed after consent change
-    // window.location.reload();
-  };
-
-  const handleDecline = () => {
-    // Decline optional categories
-    const declinedConsent = {
-      ...defaultConsent, // Necessary is true
-      [CONSENT_CATEGORIES.ANALYTICS]: false,
-      [CONSENT_CATEGORIES.MARKETING]: false,
-    };
-    Cookies.set(COOKIE_NAME, JSON.stringify(declinedConsent), { expires: 150 });
-    setConsent(declinedConsent);
-    // window.location.reload(); // Optional reload
-  };
-
-  const handleCheckboxChange = (category: string) => {
-     setConsent(prevConsent => {
-        const newState = {
-            ...prevConsent,
-            [category]: !prevConsent[category],
-        };
-        // Save immediately on change? Or wait for a save button?
-        // For now, let's save immediately for simplicity
-        Cookies.set(COOKIE_NAME, JSON.stringify(newState), { expires: 150 });
-        return newState;
-     });
-  };
-
-  // Render only on the client-side where cookies are available
-  if (!isClient) {
-    return null;
-  }
-
-  // Don't show the banner if consent has already been given/declined (cookie exists)
-  if (getCookieConsentValue(COOKIE_NAME)) {
-      return null;
-  }
+  const save = (analytics: boolean, marketing: boolean) =>
+    updateConsent({ [CONSENT_CATEGORIES.ANALYTICS]: analytics, [CONSENT_CATEGORIES.MARKETING]: marketing });
 
   return (
-    <CookieConsent
-      location="bottom"
-      buttonText="Aceptar Todas"
-      declineButtonText="Rechazar Opcionales"
-      enableDeclineButton
-      cookieName={COOKIE_NAME} // Use the specific preferences cookie name
-      expires={150}
-      onAccept={handleAccept}
-      onDecline={handleDecline}
-      // Styling using Tailwind classes via props
-      containerClasses="!bg-gray-dark text-white p-4 md:p-5 shadow-lg z-[9999] flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4"
-      contentClasses="text-sm md:text-base text-body-color-dark flex-grow mb-3 md:mb-0"
-      buttonWrapperClasses="flex flex-shrink-0 items-center space-x-3"
-      buttonClasses="!bg-primary !text-white !text-sm !font-semibold !px-5 !py-2.5 !rounded-md hover:!bg-primary/90 transition-colors duration-200"
-      declineButtonClasses="!bg-gray-600 !text-gray-200 !text-sm !font-medium !px-4 !py-2.5 !rounded-md hover:!bg-gray-500 transition-colors duration-200"
-      // Explicit style for zIndex needed as Tailwind might conflict
-      style={{ zIndex: 9999 }}
+    <div
+      role="dialog"
+      aria-label="Preferencias de cookies"
+      className="fixed inset-x-3 bottom-3 z-[90] animate-[cookie-in_.8s_cubic-bezier(.16,1,.3,1)] rounded-[24px] border border-white/10 bg-abyss/95 p-5 text-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:inset-x-auto sm:right-5 sm:bottom-5 sm:w-[400px] md:p-6"
     >
-      <div className="space-y-2">
-        <p>
-            Este sitio web utiliza cookies para mejorar tu experiencia. Algunas son esenciales, otras nos ayudan a entender cómo usas el sitio y a personalizar contenido.
-            Puedes aceptar todas o configurar tus preferencias. Consulta nuestra{" "}
-            <Link href="/cookie-policy" className="text-primary hover:underline font-semibold">
-                Política de Cookies
-            </Link>.
-        </p>
-        {/* Checkboxes styled with Tailwind */}
-        <div className="flex flex-wrap gap-x-4 gap-y-2 items-center text-sm">
-             <label className="flex items-center space-x-2 cursor-pointer text-gray-300 hover:text-white">
-                <input
-                    type="checkbox"
-                    checked={consent[CONSENT_CATEGORIES.ANALYTICS]}
-                    onChange={() => handleCheckboxChange(CONSENT_CATEGORIES.ANALYTICS)}
-                    className="rounded border-gray-500 bg-gray-700 text-primary focus:ring-primary focus:ring-offset-gray-800 h-4 w-4"
-                />
-                <span>Analíticas</span>
-            </label>
-             <label className="flex items-center space-x-2 cursor-pointer text-gray-300 hover:text-white">
-                <input
-                    type="checkbox"
-                    checked={consent[CONSENT_CATEGORIES.MARKETING]}
-                    onChange={() => handleCheckboxChange(CONSENT_CATEGORIES.MARKETING)}
-                     className="rounded border-gray-500 bg-gray-700 text-primary focus:ring-primary focus:ring-offset-gray-800 h-4 w-4"
-               />
-                <span>Marketing</span>
-            </label>
-            {/* Necesarias (siempre activas) - Opcional mostrarla */}
-            {/*
-            <label className="flex items-center space-x-2 cursor-not-allowed opacity-70 text-gray-400">
-                <input type="checkbox" checked disabled className="rounded border-gray-600 bg-gray-800 text-gray-400 focus:ring-0 h-4 w-4" />
-                <span>Necesarias</span>
-            </label>
-            */}
-        </div>
-      </div>
-    </CookieConsent>
-  );
-};
+      <p className="mb-2 flex items-center gap-2 font-display text-lg font-bold">
+        <span aria-hidden>🍪</span> Tu privacidad, tus reglas
+      </p>
+      <p className="mb-5 text-sm leading-relaxed text-white/60">
+        Usamos cookies necesarias para que la web funcione y, si nos dejas, analíticas para mejorarla.{" "}
+        <Link href="/cookie-policy" className="text-sand underline underline-offset-2">
+          Política de cookies
+        </Link>
+        .
+      </p>
 
-export default CookieConsentBanner; 
+      {custom && (
+        <div className="mb-5 space-y-2">
+          {(
+            [
+              ["analytics", "Analíticas", "Nos ayudan a entender qué contenido es útil."],
+              ["marketing", "Marketing", "Medición de campañas publicitarias."],
+            ] as const
+          ).map(([key, label, hint]) => (
+            <label key={key} className="flex cursor-pointer items-center justify-between gap-4 rounded-2xl bg-white/[0.04] px-4 py-3">
+              <span>
+                <span className="block text-sm font-semibold">{label}</span>
+                <span className="block text-xs text-white/45">{hint}</span>
+              </span>
+              <input
+                type="checkbox"
+                checked={prefs[key]}
+                onChange={() => setPrefs((p) => ({ ...p, [key]: !p[key] }))}
+                className="peer sr-only"
+              />
+              <span className="relative h-6 w-11 shrink-0 rounded-full bg-white/15 transition-colors peer-checked:bg-ember peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-ember after:absolute after:left-1 after:top-1 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform after:duration-300 peer-checked:after:translate-x-5" />
+            </label>
+          ))}
+        </div>
+      )}
+
+      <div className="flex flex-wrap gap-2">
+        <button type="button" onClick={() => save(true, true)} className="btn-ember flex-1 !px-5 !py-3 text-sm">
+          Aceptar todas
+        </button>
+        {custom ? (
+          <button type="button" onClick={() => save(prefs.analytics, prefs.marketing)} className="btn-ghost flex-1 !px-5 !py-3 text-sm">
+            Guardar selección
+          </button>
+        ) : (
+          <button type="button" onClick={() => save(false, false)} className="btn-ghost flex-1 !px-5 !py-3 text-sm">
+            Solo necesarias
+          </button>
+        )}
+        {!custom && (
+          <button type="button" onClick={() => setCustom(true)} className="w-full pt-1 text-center text-xs text-white/50 underline underline-offset-2 hover:text-white">
+            Configurar
+          </button>
+        )}
+      </div>
+      <style>{`@keyframes cookie-in { from { opacity: 0; transform: translateY(24px) scale(.97) } to { opacity: 1; transform: none } }`}</style>
+    </div>
+  );
+}

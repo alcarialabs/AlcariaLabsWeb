@@ -13,6 +13,16 @@ const GoogleAnalytics = () => {
   const { hasConsent } = useCookieConsent();
   const analyticsConsentGiven = hasConsent(CONSENT_CATEGORIES.ANALYTICS);
 
+  // Firebase Analytics (used when no standalone GA id is configured) only starts after consent.
+  useEffect(() => {
+    if (!analyticsConsentGiven || GA_MEASUREMENT_ID) return;
+    Promise.all([import('../../../firebase'), import('firebase/analytics')])
+      .then(async ([{ app }, { getAnalytics, isSupported }]) => {
+        if (await isSupported()) getAnalytics(app);
+      })
+      .catch(() => {});
+  }, [analyticsConsentGiven]);
+
   useEffect(() => {
     // Enviar pageview en cambio de ruta si hay consentimiento y ID
     if (analyticsConsentGiven && GA_MEASUREMENT_ID && typeof window.gtag === 'function') {
@@ -20,7 +30,6 @@ const GoogleAnalytics = () => {
       window.gtag('config', GA_MEASUREMENT_ID, {
         page_path: url,
       });
-      console.log(`GA Pageview sent for: ${url}`); // Log para depuración
     }
   }, [pathname, searchParams, analyticsConsentGiven]); // Ejecutar en cambio de ruta o consentimiento
 
@@ -50,7 +59,6 @@ const GoogleAnalytics = () => {
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname + window.location.search,
             });
-            console.log('Google Analytics initialized with consent.'); // Log para depuración
           `,
         }}
       />

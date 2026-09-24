@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 // Importa las funciones necesarias
 import { initializeApp } from "firebase/app";
-import { getAnalytics, isSupported } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,10 +18,8 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-const app = initializeApp(firebaseConfig);
-if (typeof window !== "undefined") {
-  isSupported().then((yes) => { if (yes) getAnalytics(app); }).catch(() => {});
-}
+// Analytics is NOT started here: it only loads after cookie consent (see GoogleAnalytics.tsx).
+export const app = initializeApp(firebaseConfig);
 
 // Inicializa Firestore y expórtalo
 export const db = getFirestore(app);

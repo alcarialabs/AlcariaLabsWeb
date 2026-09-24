@@ -12,14 +12,10 @@ const TermsOfServicePage = () => {
   const jurisdiction = "España";
 
   return (
-    <main className="pt-36 pb-16 md:pb-20 lg:pb-28 md:pt-40 lg:pt-44">
+    <main className="bg-paper pb-24 pt-36 text-ink md:pt-44">
       <div className="container">
-        <h1 className="mb-8 text-3xl font-bold text-space-blue font-syne">Términos de Servicio</h1>
-        <div className="prose prose-lg dark:prose-invert max-w-none mx-auto text-body-color dark:text-body-color-dark
-                      prose-headings:font-syne prose-headings:text-space-blue dark:prose-headings:text-white
-                      prose-a:text-primary hover:prose-a:underline
-                      prose-ul:list-disc prose-ul:pl-6 prose-li:my-1
-                      prose-strong:text-space-blue dark:prose-strong:text-white">
+        <h1 className="mb-12 font-display text-display-md font-extrabold text-ink">Términos de Servicio</h1>
+        <div className="legal max-w-3xl">
           <p>Última actualización: {new Date().toLocaleDateString('es-ES')}</p>
           <h2>1. Introducción</h2>
           <p>

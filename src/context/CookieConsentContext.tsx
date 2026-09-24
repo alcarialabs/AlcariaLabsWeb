@@ -27,8 +27,9 @@ type ConsentState = typeof defaultConsentState;
 interface CookieConsentContextType {
   consentState: ConsentState;
   hasConsent: (category: keyof ConsentState) => boolean;
-  // Podríamos añadir una función para actualizar el consentimiento si fuera necesario
-  // updateConsent: (newState: Partial<ConsentState>) => void;
+  /** null until the user has made a choice. */
+  decided: boolean | null;
+  updateConsent: (newState: Partial<ConsentState>) => void;
 }
 
 // Crear el contexto
@@ -40,6 +41,7 @@ const CookieConsentContext = createContext<CookieConsentContextType | undefined>
 export const CookieConsentProvider = ({ children }: { children: ReactNode }) => {
   const [consentState, setConsentState] = useState<ConsentState>(defaultConsentState);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [decided, setDecided] = useState<boolean | null>(null);
 
   useEffect(() => {
     // Leer la cookie solo en el cliente
@@ -61,8 +63,16 @@ export const CookieConsentProvider = ({ children }: { children: ReactNode }) => 
       // Si no hay cookie guardada, usar el estado por defecto
       setConsentState(defaultConsentState);
     }
+    setDecided(Boolean(savedConsent));
     setIsLoaded(true);
   }, []);
+
+  const updateConsent = (newState: Partial<ConsentState>) => {
+    const next = { ...defaultConsentState, ...newState, [CONSENT_CATEGORIES.NECESSARY]: true };
+    Cookies.set(COOKIE_NAME, JSON.stringify(next), { expires: 150, sameSite: "lax" });
+    setConsentState(next);
+    setDecided(true);
+  };
 
   // Función para verificar fácilmente el consentimiento de una categoría
   const hasConsent = (category: keyof ConsentState): boolean => {
@@ -74,6 +84,8 @@ export const CookieConsentProvider = ({ children }: { children: ReactNode }) => 
   const value = {
     consentState,
     hasConsent,
+    decided,
+    updateConsent,
   };
 
   return (

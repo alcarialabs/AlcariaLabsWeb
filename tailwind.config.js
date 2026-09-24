@@ -1,34 +1,13 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: [
-    "./node_modules/flowbite-react/**/*.js",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     container: {
       center: true,
-      padding: "1rem",
-    },
-    colors: {
-      current: "currentColor",
-      transparent: "transparent",
-      white: "#FFFFFF",
-      black: "#090E34",
-      dark: "#1D2144",
-      primary: "#0344DC",
-      yellow: "#FBB040",
-      "body-color": "#637381",
-      "space-blue": "#01203F",
-      "alc-beige": "#E2CC9C",
-      "frontier-gray": "#BABAC4",
-      "international-orange": "#FF4F00",
+      padding: { DEFAULT: "1.25rem", sm: "1.5rem", lg: "2rem" },
+      screens: { "2xl": "1360px" },
     },
     screens: {
       xs: "450px",
@@ -40,49 +19,56 @@ module.exports = {
     },
     extend: {
       colors: {
+        // Brand
+        ink: "#01203F", // space blue
+        night: "#000D1C", // deepest background
+        abyss: "#011529",
+        cobalt: "#0344DC",
+        ember: "#FF4F00", // international orange
+        sand: "#E3CC9C",
+        paper: "#F5EFE3",
+        mist: "#BABAC4",
+        // Legacy aliases still used by legal pages
         primary: "#0344DC",
         "space-blue": "#01203F",
-        "alc-beige": "#E2CC9C",
-        "frontier-gray": "#BABAC4",
+        "alc-beige": "#E3CC9C",
         "international-orange": "#FF4F00",
-        "body-color-dark": "#959CB1",
-        "gray-dark": "#1E232E",
-        stroke: {
-          stroke: "#E3E8EF",
-          dark: "#353943",
-        },
-        gray: {
-          ...colors.gray,
-          dark: "#1E232E",
-          light: "#F0F2F9",
-        },
+        "body-color": "#5B6475",
       },
       fontFamily: {
-        sans: ["'Inter'", ...fontFamily.sans],
-        poppins: "var(--font-poppins)",
-        syne: "var(--font-syne)",
-        poppins: ['"Poppins"', "sans-serif"],
-        playfair: ['"Playfair Display"', "serif"],
+        sans: ["var(--font-body)", ...fontFamily.sans],
+        display: ["var(--font-display)", ...fontFamily.sans],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
+        // legacy class names
+        syne: ["var(--font-display)", ...fontFamily.sans],
+        poppins: ["var(--font-body)", ...fontFamily.sans],
       },
-      boxShadow: {
-        signUp: "0px 5px 10px rgba(4, 10, 34, 0.2)",
-        one: "0px 2px 3px rgba(7, 7, 77, 0.05)",
-        two: "0px 5px 10px rgba(6, 8, 15, 0.1)",
-        three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
-        sticky: "inset 0 -1px 0 0 rgba(0, 0, 0, 0.1)",
-        "sticky-dark": "inset 0 -1px 0 0 rgba(255, 255, 255, 0.1)",
-        "feature-dark": "0px 10px 40px rgba(0, 0, 0, 0.03)",
-        menu: "0px 4px 8px rgba(0, 0, 0, 0.08)",
-        "menu-dark": "0px 4px 8px rgba(0, 0, 0, 0.1)",
-        "feature-card": "0px 5px 10px rgba(0, 0, 0, 0.05)",
-        "feature-card-dark": "0px 5px 10px rgba(0, 0, 0, 0.1)",
+      fontSize: {
+        "display-xl": ["clamp(2.35rem, 7.4vw, 7.6rem)", { lineHeight: "0.92", letterSpacing: "-0.045em" }],
+        "display-lg": ["clamp(2rem, 4.3vw, 4.4rem)", { lineHeight: "0.98", letterSpacing: "-0.04em" }],
+        "display-md": ["clamp(1.8rem, 3.7vw, 3.5rem)", { lineHeight: "1.02", letterSpacing: "-0.035em" }],
+        "display-sm": ["clamp(1.55rem, 2.5vw, 2.3rem)", { lineHeight: "1.1", letterSpacing: "-0.025em" }],
       },
-      dropShadow: {
-        one: "0px 1px 1px rgba(0, 0, 0, 0.08)",
-        two: "0px 2px 3px rgba(0, 0, 0, 0.1)",
-        three: "0px 5px 7px rgba(0, 0, 0, 0.1)",
+      transitionTimingFunction: {
+        expo: "cubic-bezier(0.16, 1, 0.3, 1)",
+        "in-out-quart": "cubic-bezier(0.76, 0, 0.24, 1)",
+      },
+      keyframes: {
+        marquee: { to: { transform: "translate3d(-50%,0,0)" } },
+        "spin-slow": { to: { transform: "rotate(360deg)" } },
+        flicker: {
+          "0%,100%": { transform: "scaleY(1) scaleX(1)", opacity: "1" },
+          "50%": { transform: "scaleY(1.12) scaleX(0.94)", opacity: "0.9" },
+        },
+        blink: { "50%": { opacity: "0" } },
+      },
+      animation: {
+        marquee: "marquee var(--marquee-duration, 40s) linear infinite",
+        "spin-slow": "spin-slow 18s linear infinite",
+        flicker: "flicker 0.18s ease-in-out infinite",
+        blink: "blink 1s step-end infinite",
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [],
 };
