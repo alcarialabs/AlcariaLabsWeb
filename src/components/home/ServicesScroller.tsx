@@ -65,11 +65,20 @@ export default function ServicesScroller() {
         const panels = gsap.utils.toArray<HTMLElement>("[data-panel]");
         panels.forEach((panel, i) => {
           if (i === panels.length - 1) return;
-          gsap.to(panel, {
-            scale: 0.92,
-            filter: "brightness(0.55)",
+          // Only recede once the next card really covers this one (its top past 40% of the
+          // viewport) and finish when it docks; while this card is readable it stays intact.
+          // Explicit start value: tweening from `filter: none` goes through brightness(0),
+          // which flashed the card black.
+          gsap.fromTo(panel, { scale: 1, filter: "brightness(1)" }, {
+            scale: 0.94,
+            filter: "brightness(0.6)",
             ease: "none",
-            scrollTrigger: { trigger: panels[i + 1], start: "top bottom", end: "top 20%", scrub: true },
+            scrollTrigger: {
+              trigger: panels[i + 1],
+              start: "top 40%",
+              end: `top ${88 + (i + 1) * 14}px`,
+              scrub: true,
+            },
           });
         });
       });
