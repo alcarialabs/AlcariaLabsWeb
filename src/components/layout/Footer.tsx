@@ -15,6 +15,7 @@ const COMPANY = [
 ];
 
 const LEGAL = [
+  { href: "/aviso-legal", label: "Aviso legal" },
   { href: "/privacy-policy", label: "Privacidad" },
   { href: "/cookie-policy", label: "Cookies" },
   { href: "/terms-of-service", label: "Términos" },
