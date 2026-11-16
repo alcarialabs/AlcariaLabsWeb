@@ -11,7 +11,7 @@ import { SITE } from "./site";
 export const TITULAR = {
   /** Nombre y condición del titular (persona física autónoma). */
   nombre: "Eric Duró Basilio, profesional autónomo (empresario individual)",
-  /** Nombre con el que se da a conocer la actividad. */
+  /** Denominación que el titular usa en esta web y en algunos proyectos (no es una sociedad). */
   nombreComercial: "Alcaria Labs",
   /** NIF del titular. */
   nif: "73102214A",
@@ -24,6 +24,6 @@ export const TITULAR = {
 } as const;
 
 /** Frase completa con los datos identificativos del titular. */
-export const titularTexto = `${TITULAR.nombre}, que opera con el nombre «${TITULAR.nombreComercial}», con NIF ${TITULAR.nif} y domicilio en ${TITULAR.domicilio}. Correo de contacto: ${TITULAR.correo}.`;
+export const titularTexto = `${TITULAR.nombre}, con NIF ${TITULAR.nif} y domicilio en ${TITULAR.domicilio}. «${TITULAR.nombreComercial}» es una denominación que el titular utiliza en este sitio web y en algunos de sus proyectos; no es una sociedad. Correo de contacto: ${TITULAR.correo}.`;
 
 export const LEGAL_ACTUALIZADO = "Última actualización: noviembre de 2026";
