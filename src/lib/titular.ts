@@ -10,7 +10,7 @@ import { SITE } from "./site";
  */
 export const TITULAR = {
   /** Nombre y condición del titular (persona física autónoma). */
-  nombre: "Eric Duró Basilio, profesional autónomo (empresario individual)",
+  nombre: "Eric Duró Basilio, profesional autónomo",
   /** Denominación que el titular usa en esta web y en algunos proyectos (no es una sociedad). */
   nombreComercial: "Alcaria Labs",
   /** NIF del titular. */
